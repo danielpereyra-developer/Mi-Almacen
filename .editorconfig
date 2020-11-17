@@ -1,0 +1,4 @@
+﻿[*.vb]
+
+# IDE0005: La declaración de importaciones no es necesaria.
+dotnet_diagnostic.IDE0005.severity = none
