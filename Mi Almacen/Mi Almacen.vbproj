@@ -265,6 +265,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\027-distribution.png" />
     <None Include="bin\Debug\Imagenes\009-checklist.png" />
     <Content Include="Imagenes\027-distribution.ico" />
   </ItemGroup>
