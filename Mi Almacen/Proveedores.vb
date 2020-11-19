@@ -124,18 +124,18 @@ Public Class Proveedores
     Private Sub regbtn_Click(sender As Object, e As EventArgs) Handles regbtn.Click
         If nomptxt.Text <> "" And rucptxt.Text <> "" And dirptxt.Text <> "" And telptxt.Text <> "" And peptxt.Text <> "" And telpeptxt.Text <> "" And imgpb.Image IsNot Nothing Then
 
-            Dim sqlinsr As String = "INSERT INTO PROVEEDOR VALUES('" + idus + "','" + pnomtxt.Text + "','" + apetxt.Text + "','" + celtxt.Text + "','" + dnitxt.Text + "','" + edadtxt.Text + "','" + tccb.Text + "','" + nomustxt.Text + "','" + passustxt.Text + "',@imagen)"
-            Dim cmd As New SqlCommand(sqlinsr, con)
-            cmd.Parameters.Add("@imagen", SqlDbType.Image).Value = ImagenAByte(imgpb.Image)
-            Try
-                con.Open()
-                cmd.ExecuteNonQuery()
-                MsgBox("Registro Guardado Exitosamente")
+            'Dim sqlinsr As String = "INSERT INTO PROVEEDOR VALUES('" + idus + "','" + pnomtxt.Text + "','" + apetxt.Text + "','" + celtxt.Text + "','" + dnitxt.Text + "','" + edadtxt.Text + "','" + tccb.Text + "','" + nomustxt.Text + "','" + passustxt.Text + "',@imagen)"
+            'Dim cmd As New SqlCommand(sqlinsr, con)
+            'cmd.Parameters.Add("@imagen", SqlDbType.Image).Value = ImagenAByte(imgpb.Image)
+            'Try
+            'con.Open()
+            'cmd.ExecuteNonQuery()
+            'MsgBox("Registro Guardado Exitosamente")
 
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            con.Close()
+            'Catch ex As Exception
+            'MsgBox(ex.Message)
+            'End Try
+            'con.Close()
 
         Else
             MsgBox("Llene todos los campos para registrar el usuario")
