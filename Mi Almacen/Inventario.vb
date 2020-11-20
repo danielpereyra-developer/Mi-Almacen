@@ -12,7 +12,7 @@ Public Class Inventario
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Producto.Show()
+        INICIO.AbrirHijo(New Producto)
     End Sub
     Public Sub MostrarProductos()
         con.Open()

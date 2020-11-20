@@ -44,6 +44,9 @@ Public Class INICIO
 #Region "Metodos"
     Private Sub activobtn(senderbtn As Object, customcolor As Color)
         If senderbtn IsNot Nothing Then
+            If actualhijo IsNot Nothing Then
+                actualhijo.Close()
+            End If
             desactivarbtn()
             actualbtn = CType(senderbtn, IconButton)
             actualbtn.BackColor = Color.FromArgb(37, 36, 81)
@@ -57,6 +60,11 @@ Public Class INICIO
             borde.Location = New Point(0, actualbtn.Location.Y)
             borde.Visible = True
             borde.BringToFront()
+
+            iconpestaña.IconChar = actualbtn.IconChar
+            iconpestaña.IconColor = customcolor
+            pestañalb.Text = actualbtn.Text
+            pestañalb.ForeColor = customcolor
 
         End If
     End Sub
@@ -196,7 +204,7 @@ Public Class INICIO
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
         activosubbtn(sender, Color.FromArgb(178, 255, 102))
     End Sub
-
+    'Nuevo Proveedor
     Private Sub IconButton8_Click(sender As Object, e As EventArgs) Handles IconButton8.Click
         activosubbtn(sender, Color.FromArgb(255, 153, 153))
         AbrirHijo(New Proveedores)
@@ -205,9 +213,10 @@ Public Class INICIO
     Private Sub IconButton7_Click(sender As Object, e As EventArgs) Handles IconButton7.Click
         activosubbtn(sender, Color.FromArgb(255, 153, 153))
     End Sub
-
+    'Nueva entrada
     Private Sub IconButton12_Click(sender As Object, e As EventArgs) Handles IconButton12.Click
         activosubbtn(sender, Color.FromArgb(102, 178, 255))
+        NEntrada.Show()
     End Sub
 
     Private Sub IconButton11_Click(sender As Object, e As EventArgs) Handles IconButton11.Click

@@ -252,6 +252,7 @@ Partial Class Inventario
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.nomptxt)
+        Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "Inventario"
         Me.Text = "Inventario"
         CType(Me.imgprpb, System.ComponentModel.ISupportInitialize).EndInit()

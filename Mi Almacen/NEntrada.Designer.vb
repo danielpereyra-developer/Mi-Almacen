@@ -25,8 +25,8 @@ Partial Class NEntrada
         Me.identtxt = New System.Windows.Forms.TextBox()
         Me.fechaenttxt = New System.Windows.Forms.TextBox()
         Me.ususttxt = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ingentbtn = New System.Windows.Forms.Button()
+        Me.cancbtn = New System.Windows.Forms.Button()
         Me.provcb = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -45,7 +45,7 @@ Partial Class NEntrada
         '
         'fechaenttxt
         '
-        Me.fechaenttxt.Location = New System.Drawing.Point(342, 118)
+        Me.fechaenttxt.Location = New System.Drawing.Point(342, 114)
         Me.fechaenttxt.Name = "fechaenttxt"
         Me.fechaenttxt.Size = New System.Drawing.Size(100, 20)
         Me.fechaenttxt.TabIndex = 2
@@ -57,23 +57,23 @@ Partial Class NEntrada
         Me.ususttxt.Size = New System.Drawing.Size(272, 20)
         Me.ususttxt.TabIndex = 3
         '
-        'Button1
+        'ingentbtn
         '
-        Me.Button1.Location = New System.Drawing.Point(316, 312)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ingentbtn.Location = New System.Drawing.Point(316, 312)
+        Me.ingentbtn.Name = "ingentbtn"
+        Me.ingentbtn.Size = New System.Drawing.Size(75, 23)
+        Me.ingentbtn.TabIndex = 5
+        Me.ingentbtn.Text = "INGRESAR"
+        Me.ingentbtn.UseVisualStyleBackColor = True
         '
-        'Button2
+        'cancbtn
         '
-        Me.Button2.Location = New System.Drawing.Point(182, 312)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.cancbtn.Location = New System.Drawing.Point(182, 312)
+        Me.cancbtn.Name = "cancbtn"
+        Me.cancbtn.Size = New System.Drawing.Size(75, 23)
+        Me.cancbtn.TabIndex = 6
+        Me.cancbtn.Text = "CANCELAR"
+        Me.cancbtn.UseVisualStyleBackColor = True
         '
         'provcb
         '
@@ -140,13 +140,13 @@ Partial Class NEntrada
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.provcb)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.cancbtn)
+        Me.Controls.Add(Me.ingentbtn)
         Me.Controls.Add(Me.ususttxt)
         Me.Controls.Add(Me.fechaenttxt)
         Me.Controls.Add(Me.identtxt)
         Me.Name = "NEntrada"
-        Me.Text = "NEntrada"
+        Me.Text = "ENTRADA"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -155,8 +155,8 @@ Partial Class NEntrada
     Friend WithEvents identtxt As TextBox
     Friend WithEvents fechaenttxt As TextBox
     Friend WithEvents ususttxt As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents ingentbtn As Button
+    Friend WithEvents cancbtn As Button
     Friend WithEvents provcb As ComboBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label

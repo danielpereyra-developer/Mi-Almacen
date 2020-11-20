@@ -46,6 +46,7 @@ Partial Class Producto
         '
         'codtxt
         '
+        Me.codtxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.codtxt.Enabled = False
         Me.codtxt.Location = New System.Drawing.Point(387, 74)
         Me.codtxt.Name = "codtxt"
@@ -54,6 +55,7 @@ Partial Class Producto
         '
         'codbarpb
         '
+        Me.codbarpb.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.codbarpb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.codbarpb.Location = New System.Drawing.Point(99, 368)
         Me.codbarpb.Name = "codbarpb"
@@ -64,6 +66,7 @@ Partial Class Producto
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button1.Location = New System.Drawing.Point(574, 72)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(148, 23)
@@ -73,6 +76,7 @@ Partial Class Producto
         '
         'imagenpb
         '
+        Me.imagenpb.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.imagenpb.Location = New System.Drawing.Point(62, 131)
         Me.imagenpb.Name = "imagenpb"
         Me.imagenpb.Size = New System.Drawing.Size(277, 231)
@@ -82,6 +86,7 @@ Partial Class Producto
         '
         'exabtn
         '
+        Me.exabtn.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.exabtn.Location = New System.Drawing.Point(264, 84)
         Me.exabtn.Name = "exabtn"
         Me.exabtn.Size = New System.Drawing.Size(75, 23)
@@ -91,6 +96,7 @@ Partial Class Producto
         '
         'nomptxt
         '
+        Me.nomptxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nomptxt.Location = New System.Drawing.Point(387, 131)
         Me.nomptxt.Name = "nomptxt"
         Me.nomptxt.Size = New System.Drawing.Size(335, 20)
@@ -98,6 +104,7 @@ Partial Class Producto
         '
         'modeloptxt
         '
+        Me.modeloptxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.modeloptxt.Location = New System.Drawing.Point(574, 183)
         Me.modeloptxt.Name = "modeloptxt"
         Me.modeloptxt.Size = New System.Drawing.Size(148, 20)
@@ -105,6 +112,7 @@ Partial Class Producto
         '
         'marcaptxt
         '
+        Me.marcaptxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.marcaptxt.Location = New System.Drawing.Point(387, 183)
         Me.marcaptxt.Name = "marcaptxt"
         Me.marcaptxt.Size = New System.Drawing.Size(148, 20)
@@ -112,6 +120,7 @@ Partial Class Producto
         '
         'catpcb
         '
+        Me.catpcb.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.catpcb.FormattingEnabled = True
         Me.catpcb.Location = New System.Drawing.Point(387, 242)
         Me.catpcb.Name = "catpcb"
@@ -120,6 +129,7 @@ Partial Class Producto
         '
         'subcatpcb
         '
+        Me.subcatpcb.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.subcatpcb.FormattingEnabled = True
         Me.subcatpcb.Location = New System.Drawing.Point(574, 242)
         Me.subcatpcb.Name = "subcatpcb"
@@ -128,6 +138,7 @@ Partial Class Producto
         '
         'Button3
         '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button3.Location = New System.Drawing.Point(514, 240)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(36, 23)
@@ -137,6 +148,7 @@ Partial Class Producto
         '
         'Button4
         '
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button4.Location = New System.Drawing.Point(701, 242)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(36, 23)
@@ -146,14 +158,16 @@ Partial Class Producto
         '
         'ubiccb
         '
+        Me.ubiccb.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ubiccb.FormattingEnabled = True
-        Me.ubiccb.Location = New System.Drawing.Point(387, 295)
+        Me.ubiccb.Location = New System.Drawing.Point(387, 304)
         Me.ubiccb.Name = "ubiccb"
         Me.ubiccb.Size = New System.Drawing.Size(344, 21)
         Me.ubiccb.TabIndex = 16
         '
         'cantmtxt
         '
+        Me.cantmtxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cantmtxt.Location = New System.Drawing.Point(387, 368)
         Me.cantmtxt.Name = "cantmtxt"
         Me.cantmtxt.Size = New System.Drawing.Size(148, 20)
@@ -161,6 +175,7 @@ Partial Class Producto
         '
         'exptxt
         '
+        Me.exptxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.exptxt.Location = New System.Drawing.Point(574, 368)
         Me.exptxt.Name = "exptxt"
         Me.exptxt.Size = New System.Drawing.Size(148, 20)
@@ -168,6 +183,7 @@ Partial Class Producto
         '
         'puptxt
         '
+        Me.puptxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.puptxt.Location = New System.Drawing.Point(387, 422)
         Me.puptxt.Name = "puptxt"
         Me.puptxt.Size = New System.Drawing.Size(148, 20)
@@ -175,6 +191,7 @@ Partial Class Producto
         '
         'Button5
         '
+        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button5.Location = New System.Drawing.Point(656, 452)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
@@ -190,7 +207,7 @@ Partial Class Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 516)
+        Me.ClientSize = New System.Drawing.Size(818, 527)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.puptxt)
         Me.Controls.Add(Me.exptxt)
@@ -208,6 +225,7 @@ Partial Class Producto
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.codbarpb)
         Me.Controls.Add(Me.codtxt)
+        Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "Producto"
         Me.Text = "Producto"
         CType(Me.codbarpb, System.ComponentModel.ISupportInitialize).EndInit()

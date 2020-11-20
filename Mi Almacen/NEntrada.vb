@@ -3,13 +3,16 @@
 Public Class NEntrada
     Dim pro() As String
     Dim np As Integer
+    Dim nent As Integer
+    Public id As String
+    Public prov As String
     Private Sub NEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar()
         con.Close()
-        Dim sqlce As String = "SELECT COUNT(*) FROM CATEGORIA"
+        Dim sqlce As String = "SELECT COUNT(*) FROM ENTRADA"
         Dim cmd2 As New SqlCommand(sqlce, con)
         Dim rs As SqlDataReader
-        Dim nent As Integer
+
 
         con.Open()
         rs = cmd2.ExecuteReader
@@ -17,7 +20,6 @@ Public Class NEntrada
         nent = CInt(rs(0))
         con.Close()
 
-        identtxt.Text = CStr(nent + 1)
         fechaenttxt.Text = DateTime.Now.ToString("d")
         ususttxt.Text = Login.user
 
@@ -53,7 +55,15 @@ Public Class NEntrada
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+    Private Sub ingentbtn_Click(sender As Object, e As EventArgs) Handles ingentbtn.Click
+        Select Case (Len(Str(nent)) - 1)
+            Case 1 : identtxt.Text = "E" + "000" + Trim(Str(Int(nent + 1)))
+            Case 2 : identtxt.Text = "E" + "00" + Trim(Str(Int(nent + 1)))
+            Case 3 : identtxt.Text = "E" + "0" + Trim(Str(Int(nent + 1)))
+            Case 4 : identtxt.Text = "E" + Trim(Str(Int(nent + 1)))
+        End Select
+        id = identtxt.Text
+        prov = provcb.Text
+        INICIO.AbrirHijo(New Entrada)
     End Sub
 End Class

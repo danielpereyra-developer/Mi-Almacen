@@ -123,22 +123,40 @@ Public Class Proveedores
 
     Private Sub regbtn_Click(sender As Object, e As EventArgs) Handles regbtn.Click
         If nomptxt.Text <> "" And rucptxt.Text <> "" And dirptxt.Text <> "" And telptxt.Text <> "" And peptxt.Text <> "" And telpeptxt.Text <> "" And imgpb.Image IsNot Nothing Then
+            Dim idprov As String
+            Dim cantp As Integer
+            Dim sql2 As String = "SELECT COUNT(*) FROM PROVEEDOR"
+            Dim cmd As New SqlCommand(sql2, con)
+            Dim rs As SqlDataReader
 
-            'Dim sqlinsr As String = "INSERT INTO PROVEEDOR VALUES('" + idus + "','" + pnomtxt.Text + "','" + apetxt.Text + "','" + celtxt.Text + "','" + dnitxt.Text + "','" + edadtxt.Text + "','" + tccb.Text + "','" + nomustxt.Text + "','" + passustxt.Text + "',@imagen)"
-            'Dim cmd As New SqlCommand(sqlinsr, con)
-            'cmd.Parameters.Add("@imagen", SqlDbType.Image).Value = ImagenAByte(imgpb.Image)
-            'Try
-            'con.Open()
-            'cmd.ExecuteNonQuery()
-            'MsgBox("Registro Guardado Exitosamente")
+            con.Open()
+            rs = cmd.ExecuteReader
+            rs.Read()
+            cantp = CInt(rs(0))
+            con.Close()
 
-            'Catch ex As Exception
-            'MsgBox(ex.Message)
-            'End Try
-            'con.Close()
+            Select Case (Len(Str(cantp)) - 1)
+                Case 1 : idprov = "P" + "000" + Trim(Str(Int(cantp + 1)))
+                Case 2 : idprov = "P" + "00" + Trim(Str(Int(cantp + 1)))
+                Case 3 : idprov = "P" + "0" + Trim(Str(Int(cantp + 1)))
+                Case 4 : idprov = "P" + Trim(Str(Int(cantp + 1)))
+            End Select
+
+            Dim sqlinsr As String = "INSERT INTO PROVEEDOR VALUES('" + idprov + "','" + nomptxt.Text + "','" + rucptxt.Text + "','" + dirptxt.Text + "','" + telptxt.Text + "','" + peptxt.Text + "','" + telpeptxt.Text + "',@imagen)"
+            Dim cmd2 As New SqlCommand(sqlinsr, con)
+            cmd2.Parameters.Add("@imagen", SqlDbType.Image).Value = ImagenAByte(imgpb.Image)
+            Try
+                con.Open()
+                cmd2.ExecuteNonQuery()
+                'MsgBox("Registro Guardado Exitosamente")
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            con.Close()
 
         Else
-            MsgBox("Llene todos los campos para registrar el usuario")
+            MsgBox("Llene todos los campos para registrar el nuevo proveedor")
         End If
     End Sub
 End Class

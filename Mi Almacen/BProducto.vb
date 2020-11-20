@@ -103,25 +103,44 @@ Public Class BProducto
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim sqlins As String = "INSERT INTO DETALLE_ENTRADA VALUES('" + Entrada.identxt.Text + "','" + codprotxt.Text + "','" + canttxt.Text + "','" + totaltxt.Text + "')"
-        Dim cmd As New SqlCommand(sqlins, con)
 
-        con.Open()
-        cmd.ExecuteNonQuery()
-        con.Close()
+        Dim row As DataRow
 
-        Dim sql As String = "SELECT DETALLE_ENTRADA.ID_PRODUCTO,PRODUCTOS.NOM_PRODUCTO, PRODUCTOS.MARCA_PRODUCTO, PRODUCTOS.MODELO_PRODUCTO, PRODUCTOS.PU_PRODUCTO,DETALLE_ENTRADA.CANTIDAD,DETALLE_ENTRADA.TOTAL FROM DETALLE_ENTRADA
-														INNER JOIN PRODUCTOS ON DETALLE_ENTRADA.ID_PRODUCTO=PRODUCTOS.ID_PRODUCTO WHERE DETALLE_ENTRADA.ID_ENTRADA='" + Entrada.identxt.Text + "'"
-        Dim cmd2 As New SqlCommand(sql, con)
+        row = Entrada.dtable.NewRow
 
-        Try
-            Dim da As New SqlDataAdapter(cmd2)
-            Dim dt As New DataTable
-            da.Fill(dt)
+        row(Entrada.dcolum1) = codprotxt.Text
+        row(Entrada.dcolum2) = nomprotxt.Text
+        row(Entrada.dcolum3) = marcaprotxt.Text
+        row(Entrada.dcolum4) = modeloprotxt.Text
+        row(Entrada.dcolum5) = puprotxt.Text
+        row(Entrada.dcolum6) = canttxt.Text
+        row(Entrada.dcolum7) = totaltxt.Text
 
-            Entrada.detalledgv.DataSource = dt
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        Entrada.dtable.Rows.Add(row)
+        Entrada.dtable.AcceptChanges()
+        Entrada.refrescardetalle()
+
+        Me.Hide()
+
+        'Dim sqlins As String = "INSERT INTO DETALLE_ENTRADA VALUES('" + Entrada.identxt.Text + "','" + codprotxt.Text + "','" + canttxt.Text + "','" + totaltxt.Text + "')"
+        'Dim cmd As New SqlCommand(sqlins, con)
+
+        'con.Open()
+        'cmd.ExecuteNonQuery()
+        'con.Close()
+
+        'Dim sql As String = "SELECT DETALLE_ENTRADA.ID_PRODUCTO,PRODUCTOS.NOM_PRODUCTO, PRODUCTOS.MARCA_PRODUCTO, PRODUCTOS.MODELO_PRODUCTO, PRODUCTOS.PU_PRODUCTO,DETALLE_ENTRADA.CANTIDAD,DETALLE_ENTRADA.TOTAL FROM DETALLE_ENTRADA
+        'INNER JOIN PRODUCTOS ON DETALLE_ENTRADA.ID_PRODUCTO=PRODUCTOS.ID_PRODUCTO WHERE DETALLE_ENTRADA.ID_ENTRADA='" + Entrada.identxt.Text + "'"
+        'Dim cmd2 As New SqlCommand(sql, con)
+
+        'Try
+        'Dim da As New SqlDataAdapter(cmd2)
+        'Dim dt As New DataTable
+        'da.Fill(dt)
+
+        'Entrada.detalledgv.DataSource = dt
+        'Catch ex As Exception
+        'MsgBox(ex.Message)
+        'End Try
     End Sub
 End Class
