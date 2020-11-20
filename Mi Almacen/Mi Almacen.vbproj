@@ -169,12 +169,6 @@
     <Compile Include="NEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.vb">
-      <DependentUpon>Principal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Principal.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Producto.Designer.vb">
       <DependentUpon>Producto.vb</DependentUpon>
     </Compile>
@@ -232,9 +226,6 @@
     <EmbeddedResource Include="NEntrada.resx">
       <DependentUpon>NEntrada.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
-      <DependentUpon>Principal.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Producto.resx">
       <DependentUpon>Producto.vb</DependentUpon>
     </EmbeddedResource>
@@ -267,9 +258,12 @@
   <ItemGroup>
     <Content Include="bin\Debug\Imagenes\Logo_header_desktop.png" />
     <Content Include="Imagenes\004-worker.png" />
-    <Content Include="Imagenes\006-delivery man.png" />
+    <Content Include="Imagenes\006-deliveryman.png" />
     <Content Include="Imagenes\009-employee.png" />
     <Content Include="Imagenes\027-distribution.png" />
+    <Content Include="Imagenes\candado-cerrado.png" />
+    <Content Include="Imagenes\usuario %282%29.png" />
+    <Content Include="Imagenes\usuario-de-perfil.png" />
     <None Include="bin\Debug\Imagenes\009-checklist.png" />
     <Content Include="Imagenes\027-distribution.ico" />
   </ItemGroup>

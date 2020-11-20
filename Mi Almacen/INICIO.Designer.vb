@@ -95,6 +95,7 @@ Partial Class INICIO
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(489, 27)
@@ -105,6 +106,7 @@ Partial Class INICIO
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(364, 8)
@@ -115,6 +117,7 @@ Partial Class INICIO
         '
         'IconPictureBox1
         '
+        Me.IconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Copyright
         Me.IconPictureBox1.IconColor = System.Drawing.Color.White
         Me.IconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
@@ -696,6 +699,7 @@ Partial Class INICIO
         Me.tpusuariopb.Location = New System.Drawing.Point(43, 26)
         Me.tpusuariopb.Name = "tpusuariopb"
         Me.tpusuariopb.Size = New System.Drawing.Size(35, 31)
+        Me.tpusuariopb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.tpusuariopb.TabIndex = 0
         Me.tpusuariopb.TabStop = False
         '

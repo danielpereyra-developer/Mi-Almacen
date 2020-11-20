@@ -52,6 +52,7 @@ Public Class Producto
     Private Sub exabtn_Click(sender As Object, e As EventArgs) Handles exabtn.Click
         Archivos.ShowDialog()
         nomimg = Archivos.FileName
+        MsgBox(nomimg)
         If nomimg <> "" Then
             imagenpb.Image = Image.FromFile(nomimg)
         End If

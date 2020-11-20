@@ -27,7 +27,7 @@ Public Class INICIO
     Private Sub INICIO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OcultarSubMenu()
         If Login.tpus = "JA" Then
-            tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\006-delivery man.png")
+            tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\006-deliveryman.png")
         ElseIf Login.tpus = "TB" Then
             tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\004-worker.png")
         ElseIf Login.tpus = "AD" Then
