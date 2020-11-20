@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class BProducto
+    Public subtotal As Double
     Private Sub BProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar()
         con.Close()
@@ -8,6 +9,7 @@ Public Class BProducto
         If prodlb.Items.Count > 0 Then
             prodlb.SelectedIndex = 0
         End If
+
     End Sub
     Public Sub MostrarProducto(ByVal filtro As String)
         Dim sql As String
@@ -119,6 +121,10 @@ Public Class BProducto
         Entrada.dtable.Rows.Add(row)
         Entrada.dtable.AcceptChanges()
         Entrada.refrescardetalle()
+
+        subtotal = subtotal + CDbl(totaltxt.Text)
+
+        Entrada.actualizarcostos(subtotal)
 
         Me.Hide()
 

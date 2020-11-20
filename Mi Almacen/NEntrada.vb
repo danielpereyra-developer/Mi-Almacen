@@ -6,6 +6,7 @@ Public Class NEntrada
     Dim nent As Integer
     Public id As String
     Public prov As String
+    Public idprov As String
     Private Sub NEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar()
         con.Close()
@@ -64,6 +65,8 @@ Public Class NEntrada
         End Select
         id = identtxt.Text
         prov = provcb.Text
+        idprov = pro(provcb.SelectedIndex + 1)
         INICIO.AbrirHijo(New Entrada)
+
     End Sub
 End Class

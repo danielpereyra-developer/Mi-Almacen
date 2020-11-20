@@ -268,4 +268,265 @@ Module Reportes
 
         Return dtable
     End Function
+
+    Sub pdfEntrada(ByVal sfdr As SaveFileDialog, ByVal dt As DataTable, ByVal qr As Byte())
+        sfdr.ShowDialog()
+        Dim ruta As String = sfdr.FileName
+        pdfWrite = PdfWriter.GetInstance(pdfdoc, New FileStream(ruta, FileMode.Create))
+
+        Dim FontB As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, itextsharp.text.Font.NORMAL))
+        Dim FontB8 As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, itextsharp.text.Font.BOLD))
+        Dim FontB12 As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 12, itextsharp.text.Font.BOLD))
+        Dim pcolum As New Font(itextsharp.text.Font.FontFamily.HELVETICA, 9, itextsharp.text.Font.BOLD, BaseColor.BLACK)
+        Dim pfila As New Font(itextsharp.text.Font.FontFamily.HELVETICA, 9, itextsharp.text.Font.BOLD, BaseColor.BLACK)
+        Dim Cvacio As PdfPCell = New PdfPCell(New Phrase("  "))
+        Cvacio.Border = 0
+
+        pdfdoc.Open()
+
+        Dim tabla1 As PdfPTable = New PdfPTable(4)
+        Dim col1 As New PdfPCell
+        Dim col2 As New PdfPCell
+        Dim col3 As New PdfPCell
+        Dim col4 As New PdfPCell
+        Dim col5 As New PdfPCell
+        Dim col6 As New PdfPCell
+        Dim col7 As New PdfPCell
+        'Dim ILine As Integer
+        'Dim IFila As Integer
+
+        tabla1.WidthPercentage = 95
+
+        Dim whidths As Single() = New Single() {4.0F, 7.0F, 1.0F, 4.0F}
+        tabla1.SetWidths(whidths)
+
+#Region "Encabezado"
+
+        Dim imgurl As String = Application.StartupPath & "\Imagenes\Logo_header_desktop.png"
+        Dim img As itextsharp.text.Image
+        img = itextsharp.text.Image.GetInstance(imgurl)
+        img.ScaleToFit(110.0F, 140.0F)
+        img.SpacingBefore = 20.0F
+        img.SpacingAfter = 10.0F
+        img.SetAbsolutePosition(35, 780)
+        pdfdoc.Add(img)
+
+        tabla1.AddCell(Cvacio)
+        col2 = New PdfPCell(New Phrase("SODIMAC S.A.", FontB8))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+        col2 = New PdfPCell(New Phrase("Av. José De Lama S/N Cruce con Av. Las Dalias, Sullana 20103", FontB))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+        col2 = New PdfPCell(New Phrase("SULLANA", FontB))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+        col2 = New PdfPCell(New Phrase("(01) 2030420", FontB))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+
+        Dim img2 As itextsharp.text.Image
+        img2 = itextsharp.text.Image.GetInstance(qr)
+        img2.ScaleToFit(60.0F, 90.0F)
+        img2.SpacingBefore = 20.0F
+        img2.SpacingAfter = 10.0F
+        img2.SetAbsolutePosition(460, 750)
+        pdfdoc.Add(img2)
+
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        col4 = New PdfPCell(New Phrase("N° " + Entrada.identxt.Text, FontB))
+        tabla1.AddCell(col4)
+
+        pdfdoc.Add(tabla1)
+
+#End Region
+
+#Region "DATOS"
+
+        Dim CLinea As PdfPCell = New PdfPCell(New Phrase("  "))
+        CLinea.Colspan = 4
+        CLinea.Border = 2
+
+        Dim tabla2 As PdfPTable = New PdfPTable(4)
+        Dim whidths2 As Single() = New Single() {2.0F, 8.0F, 3.0F, 2.0F}
+        tabla2.WidthPercentage = 95
+        tabla2.SetWidths(whidths2)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(CLinea)
+        col1 = New PdfPCell(New Phrase("Usuario: ", FontB8))
+        col1.Border = 0
+        tabla2.AddCell(col1)
+        col2 = New PdfPCell(New Phrase(Login.user, FontB8))
+        col2.Border = 0
+        tabla2.AddCell(col2)
+        col3 = New PdfPCell(New Phrase("Fecha de Reporte: ", FontB8))
+        col3.Border = 0
+        tabla2.AddCell(col3)
+        col4 = New PdfPCell(New Phrase(Now, FontB8))
+        col4.Border = 0
+        tabla2.AddCell(col4)
+        col1 = New PdfPCell(New Phrase("Proveedor: ", FontB8))
+        col1.Border = 0
+        tabla2.AddCell(col1)
+        col2 = New PdfPCell(New Phrase(Entrada.provtxt.Text, FontB8))
+        col2.Border = 0
+        tabla2.AddCell(col2)
+
+        tabla2.AddCell(CLinea)
+
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+
+        pdfdoc.Add(tabla2)
+
+#End Region
+
+#Region "Detalle"
+        Dim tablaD As New PdfPTable(7)
+        tablaD.TotalWidth = 550.0F
+        tablaD.LockedWidth = True
+        tablaD.HorizontalAlignment = Element.ALIGN_CENTER
+        tablaD.HeaderRows = 1
+
+        Dim widths3 As Single() = New Single() {0.8F, 3.0F, 0.8F, 0.8F, 0.5F, 0.5F, 0.5F}
+        tablaD.SetWidths(widths3)
+
+        Dim pdfcell As PdfPCell = Nothing
+
+        pdfcell = New PdfPCell(New Paragraph("CODIGO", pcolum))
+        pdfcell.HorizontalAlignment = Element.ALIGN_CENTER
+        pdfcell.MinimumHeight = 12
+        pdfcell.PaddingLeft = 5.0F
+        pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
+        tablaD.AddCell(pdfcell)
+
+        pdfcell = New PdfPCell(New Paragraph("PRODUCTO", pcolum))
+        pdfcell.HorizontalAlignment = Element.ALIGN_CENTER
+        pdfcell.MinimumHeight = 12
+        pdfcell.PaddingLeft = 5.0F
+        pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
+        tablaD.AddCell(pdfcell)
+
+        pdfcell = New PdfPCell(New Paragraph("MARCA", pcolum))
+        pdfcell.HorizontalAlignment = Element.ALIGN_CENTER
+        pdfcell.MinimumHeight = 12
+        pdfcell.PaddingLeft = 5.0F
+        pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
+        tablaD.AddCell(pdfcell)
+
+        pdfcell = New PdfPCell(New Paragraph("MODELO", pcolum))
+        pdfcell.HorizontalAlignment = Element.ALIGN_CENTER
+        pdfcell.MinimumHeight = 18
+        pdfcell.PaddingLeft = 5.0F
+        pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
+        tablaD.AddCell(pdfcell)
+
+
+        pdfcell = New PdfPCell(New Paragraph("P.U", pcolum))
+        pdfcell.HorizontalAlignment = Element.ALIGN_LEFT
+        pdfcell.MinimumHeight = 12
+        pdfcell.PaddingLeft = 5.0F
+        pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
+        tablaD.AddCell(pdfcell)
+
+        pdfcell = New PdfPCell(New Paragraph("CANT.", pcolum))
+        pdfcell.HorizontalAlignment = Element.ALIGN_LEFT
+        pdfcell.MinimumHeight = 12
+        pdfcell.PaddingLeft = 5.0F
+        pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
+        tablaD.AddCell(pdfcell)
+
+        pdfcell = New PdfPCell(New Paragraph("TOTAL", pcolum))
+        pdfcell.HorizontalAlignment = Element.ALIGN_LEFT
+        pdfcell.MinimumHeight = 12
+        pdfcell.PaddingLeft = 5.0F
+        pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
+        tablaD.AddCell(pdfcell)
+
+        For i = 0 To dt.Rows.Count - 1
+            For j = 0 To dt.Columns.Count - 1
+                pdfcell = New PdfPCell(New Paragraph(dt.Rows(i)(j).ToString, pfila))
+                pdfcell.MinimumHeight = 18
+                pdfcell.PaddingLeft = 5.0F
+                pdfcell.HorizontalAlignment = Element.ALIGN_LEFT
+                tablaD.AddCell(pdfcell)
+            Next
+        Next
+
+        pdfdoc.Add(tablaD)
+
+#End Region
+
+#Region "Totales"
+
+        Dim tabla3 As PdfPTable = New PdfPTable(5)
+        Dim whidths3 As Single() = New Single() {2.0F, 8.0F, 3.0F, 2.0F, 2.0F}
+        tabla3.WidthPercentage = 95
+        tabla3.SetWidths(whidths3)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        col4 = New PdfPCell(New Phrase("SubTotal: ", FontB8))
+        col4.Border = 0
+        tabla3.AddCell(col4)
+        col5 = New PdfPCell(New Phrase(Entrada.subttxt.Text, FontB8))
+        col5.Border = 0
+        tabla3.AddCell(col5)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        col4 = New PdfPCell(New Phrase("IGV: ", FontB8))
+        col4.Border = 0
+        tabla3.AddCell(col4)
+        col5 = New PdfPCell(New Phrase(Entrada.igvtxt.Text, FontB8))
+        col5.Border = 0
+        tabla3.AddCell(col5)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        col4 = New PdfPCell(New Phrase("Total: ", FontB8))
+        col4.Border = 0
+        tabla3.AddCell(col4)
+        col5 = New PdfPCell(New Phrase(Entrada.totaltxt.Text, FontB8))
+        col5.Border = 0
+        tabla3.AddCell(col5)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        pdfdoc.Add(tabla3)
+
+#End Region
+
+    End Sub
+
 End Module

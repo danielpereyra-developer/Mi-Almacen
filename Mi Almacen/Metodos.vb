@@ -8,6 +8,7 @@ Imports itextsharp.text.pdf
 Imports itextsharp.text.pdf.BarcodeCodabar
 Imports System.Text
 Imports System.Security.Cryptography
+Imports QRCoder
 
 Module Metodos
     Public con As New SqlConnection
@@ -26,6 +27,17 @@ Module Metodos
     Sub desconectar()
         con.Close()
     End Sub
+
+
+    Public Function generarqr(contenido As String) As Image
+        Dim qrgen As New QRCodeGenerator
+        Dim qrdatos As QRCodeData = qrgen.CreateQrCode(contenido, QRCoder.QRCodeGenerator.ECCLevel.H)
+        Dim qrcod As New QRCode(qrdatos)
+
+        Dim qrimg As Bitmap = qrcod.GetGraphic(5, Color.Black, Color.White, True)
+
+        generarqr = Base64ToImage(BitmapToBase64(qrimg))
+    End Function
 
     Public Function ImagenAByte(ByVal img As Image) As Byte()
         Dim ms As New IO.MemoryStream()
