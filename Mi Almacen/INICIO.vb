@@ -161,6 +161,7 @@ Public Class INICIO
     Private Sub IconButton13_Click(sender As Object, e As EventArgs) Handles IconButton13.Click
         OcultarSubMenu()
         activobtn(sender, Color.FromArgb(255, 255, 102))
+        AbrirHijo(New Inventario)
     End Sub
 
     Private Sub IconButton17_Click(sender As Object, e As EventArgs) Handles IconButton17.Click

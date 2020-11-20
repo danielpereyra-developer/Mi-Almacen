@@ -48,6 +48,7 @@ Partial Class Inventario
         '
         'nomptxt
         '
+        Me.nomptxt.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nomptxt.Location = New System.Drawing.Point(94, 90)
         Me.nomptxt.Name = "nomptxt"
         Me.nomptxt.Size = New System.Drawing.Size(162, 20)
@@ -55,6 +56,7 @@ Partial Class Inventario
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button1.Location = New System.Drawing.Point(289, 88)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
@@ -64,6 +66,7 @@ Partial Class Inventario
         '
         'Button2
         '
+        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button2.Location = New System.Drawing.Point(82, 132)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(95, 23)
@@ -73,6 +76,7 @@ Partial Class Inventario
         '
         'Button3
         '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button3.Location = New System.Drawing.Point(209, 132)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(72, 23)
@@ -82,6 +86,7 @@ Partial Class Inventario
         '
         'Button4
         '
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button4.Location = New System.Drawing.Point(314, 132)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(78, 23)
@@ -91,7 +96,8 @@ Partial Class Inventario
         '
         'imgprpb
         '
-        Me.imgprpb.Location = New System.Drawing.Point(37, 224)
+        Me.imgprpb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.imgprpb.Location = New System.Drawing.Point(37, 215)
         Me.imgprpb.Name = "imgprpb"
         Me.imgprpb.Size = New System.Drawing.Size(219, 211)
         Me.imgprpb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -100,105 +106,119 @@ Partial Class Inventario
         '
         'codprtxt
         '
-        Me.codprtxt.Location = New System.Drawing.Point(333, 231)
+        Me.codprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.codprtxt.Location = New System.Drawing.Point(279, 278)
         Me.codprtxt.Name = "codprtxt"
         Me.codprtxt.Size = New System.Drawing.Size(100, 20)
         Me.codprtxt.TabIndex = 6
         '
         'nomprtxt
         '
-        Me.nomprtxt.Location = New System.Drawing.Point(498, 231)
+        Me.nomprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.nomprtxt.Location = New System.Drawing.Point(444, 278)
         Me.nomprtxt.Name = "nomprtxt"
         Me.nomprtxt.Size = New System.Drawing.Size(100, 20)
         Me.nomprtxt.TabIndex = 8
         '
         'marcaprtxt
         '
-        Me.marcaprtxt.Location = New System.Drawing.Point(333, 271)
+        Me.marcaprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.marcaprtxt.Location = New System.Drawing.Point(279, 318)
         Me.marcaprtxt.Name = "marcaprtxt"
         Me.marcaprtxt.Size = New System.Drawing.Size(100, 20)
         Me.marcaprtxt.TabIndex = 9
         '
         'modeloprtxt
         '
-        Me.modeloprtxt.Location = New System.Drawing.Point(498, 271)
+        Me.modeloprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.modeloprtxt.Location = New System.Drawing.Point(444, 318)
         Me.modeloprtxt.Name = "modeloprtxt"
         Me.modeloprtxt.Size = New System.Drawing.Size(100, 20)
         Me.modeloprtxt.TabIndex = 10
         '
         'catprtxt
         '
-        Me.catprtxt.Location = New System.Drawing.Point(333, 306)
+        Me.catprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.catprtxt.Location = New System.Drawing.Point(279, 353)
         Me.catprtxt.Name = "catprtxt"
         Me.catprtxt.Size = New System.Drawing.Size(100, 20)
         Me.catprtxt.TabIndex = 11
         '
         'scatprtxt
         '
-        Me.scatprtxt.Location = New System.Drawing.Point(498, 306)
+        Me.scatprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.scatprtxt.Location = New System.Drawing.Point(444, 353)
         Me.scatprtxt.Name = "scatprtxt"
         Me.scatprtxt.Size = New System.Drawing.Size(100, 20)
         Me.scatprtxt.TabIndex = 12
         '
         'productoslb
         '
+        Me.productoslb.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.productoslb.FormattingEnabled = True
-        Me.productoslb.Location = New System.Drawing.Point(664, 122)
+        Me.productoslb.Location = New System.Drawing.Point(588, 132)
         Me.productoslb.Name = "productoslb"
-        Me.productoslb.Size = New System.Drawing.Size(210, 264)
+        Me.productoslb.Size = New System.Drawing.Size(176, 264)
         Me.productoslb.TabIndex = 13
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(651, 76)
+        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button5.Location = New System.Drawing.Point(588, 66)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.Size = New System.Drawing.Size(51, 45)
         Me.Button5.TabIndex = 14
         Me.Button5.Text = "Agregar"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(732, 76)
+        Me.Button6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button6.Location = New System.Drawing.Point(645, 66)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.Size = New System.Drawing.Size(56, 45)
         Me.Button6.TabIndex = 15
         Me.Button6.Text = "Modificar"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(814, 76)
+        Me.Button7.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button7.Location = New System.Drawing.Point(707, 66)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.Size = New System.Drawing.Size(56, 45)
         Me.Button7.TabIndex = 16
         Me.Button7.Text = "Borrar"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'ubicprtxt
         '
-        Me.ubicprtxt.Location = New System.Drawing.Point(333, 348)
+        Me.ubicprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.ubicprtxt.Location = New System.Drawing.Point(279, 395)
         Me.ubicprtxt.Name = "ubicprtxt"
         Me.ubicprtxt.Size = New System.Drawing.Size(265, 20)
         Me.ubicprtxt.TabIndex = 17
         '
         'exprtxt
         '
-        Me.exprtxt.Location = New System.Drawing.Point(437, 415)
+        Me.exprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.exprtxt.Location = New System.Drawing.Point(383, 462)
         Me.exprtxt.Name = "exprtxt"
         Me.exprtxt.Size = New System.Drawing.Size(100, 20)
         Me.exprtxt.TabIndex = 19
         '
         'cmprtxt
         '
-        Me.cmprtxt.Location = New System.Drawing.Point(287, 415)
+        Me.cmprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cmprtxt.Location = New System.Drawing.Point(233, 462)
         Me.cmprtxt.Name = "cmprtxt"
         Me.cmprtxt.Size = New System.Drawing.Size(100, 20)
         Me.cmprtxt.TabIndex = 18
         '
         'puprtxt
         '
-        Me.puprtxt.Location = New System.Drawing.Point(583, 415)
+        Me.puprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.puprtxt.Location = New System.Drawing.Point(529, 462)
         Me.puprtxt.Name = "puprtxt"
         Me.puprtxt.Size = New System.Drawing.Size(100, 20)
         Me.puprtxt.TabIndex = 20
@@ -211,7 +231,7 @@ Partial Class Inventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(925, 513)
+        Me.ClientSize = New System.Drawing.Size(818, 527)
         Me.Controls.Add(Me.puprtxt)
         Me.Controls.Add(Me.exprtxt)
         Me.Controls.Add(Me.cmprtxt)

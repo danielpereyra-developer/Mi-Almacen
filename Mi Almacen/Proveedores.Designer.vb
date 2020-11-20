@@ -32,6 +32,7 @@ Partial Class Proveedores
         Me.regbtn = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Archivos = New System.Windows.Forms.OpenFileDialog()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.imgpb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -118,12 +119,22 @@ Partial Class Proveedores
         '
         Me.Archivos.Filter = "JPG |*.jpg|PNG|*.png"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(58, 73)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(195, 13)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "* Ingrese los datos del nuevo proveedor"
+        '
         'Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(818, 527)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.regbtn)
         Me.Controls.Add(Me.imgpb)
@@ -151,4 +162,5 @@ Partial Class Proveedores
     Friend WithEvents regbtn As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Archivos As OpenFileDialog
+    Friend WithEvents Label1 As Label
 End Class
