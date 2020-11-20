@@ -47,7 +47,8 @@ Partial Class USUARIOS
         '
         'imgpb
         '
-        Me.imgpb.Location = New System.Drawing.Point(54, 55)
+        Me.imgpb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.imgpb.Location = New System.Drawing.Point(23, 54)
         Me.imgpb.Name = "imgpb"
         Me.imgpb.Size = New System.Drawing.Size(327, 335)
         Me.imgpb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -86,13 +87,14 @@ Partial Class USUARIOS
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.Controls.Add(Me.edadtxt)
         Me.GroupBox1.Controls.Add(Me.dnitxt)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.celtxt)
         Me.GroupBox1.Controls.Add(Me.apetxt)
         Me.GroupBox1.Controls.Add(Me.pnomtxt)
-        Me.GroupBox1.Location = New System.Drawing.Point(442, 41)
+        Me.GroupBox1.Location = New System.Drawing.Point(378, 40)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(397, 163)
         Me.GroupBox1.TabIndex = 5
@@ -147,13 +149,14 @@ Partial Class USUARIOS
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.tccb)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.passustxt)
         Me.GroupBox2.Controls.Add(Me.nomustxt)
-        Me.GroupBox2.Location = New System.Drawing.Point(443, 210)
+        Me.GroupBox2.Location = New System.Drawing.Point(379, 209)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(396, 243)
         Me.GroupBox2.TabIndex = 10
@@ -180,7 +183,8 @@ Partial Class USUARIOS
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(442, 477)
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button3.Location = New System.Drawing.Point(411, 476)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(156, 23)
         Me.Button3.TabIndex = 11
@@ -189,7 +193,8 @@ Partial Class USUARIOS
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(173, 422)
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button4.Location = New System.Drawing.Point(142, 421)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 12
@@ -204,14 +209,15 @@ Partial Class USUARIOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(880, 528)
+        Me.ClientSize = New System.Drawing.Size(818, 527)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.imgpb)
+        Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "USUARIOS"
-        Me.Text = " "
+        Me.Text = " NUEVO USUARIO"
         CType(Me.imgpb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

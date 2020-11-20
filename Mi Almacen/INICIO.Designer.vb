@@ -22,36 +22,50 @@ Partial Class INICIO
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.footerp = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.asidep = New System.Windows.Forms.Panel()
-        Me.sub5 = New System.Windows.Forms.Panel()
-        Me.sub3 = New System.Windows.Forms.Panel()
-        Me.sub2 = New System.Windows.Forms.Panel()
-        Me.sub1 = New System.Windows.Forms.Panel()
-        Me.menup = New System.Windows.Forms.Panel()
-        Me.logop = New System.Windows.Forms.Panel()
-        Me.headerp = New System.Windows.Forms.Panel()
-        Me.pestañalb = New System.Windows.Forms.Label()
-        Me.iconpestaña = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton21 = New FontAwesome.Sharp.IconButton()
+        Me.sub5 = New System.Windows.Forms.Panel()
         Me.IconButton18 = New FontAwesome.Sharp.IconButton()
         Me.IconButton19 = New FontAwesome.Sharp.IconButton()
         Me.IconButton20 = New FontAwesome.Sharp.IconButton()
         Me.IconButton17 = New FontAwesome.Sharp.IconButton()
         Me.IconButton13 = New FontAwesome.Sharp.IconButton()
+        Me.sub3 = New System.Windows.Forms.Panel()
         Me.IconButton4 = New FontAwesome.Sharp.IconButton()
         Me.IconButton10 = New FontAwesome.Sharp.IconButton()
         Me.IconButton11 = New FontAwesome.Sharp.IconButton()
         Me.IconButton12 = New FontAwesome.Sharp.IconButton()
         Me.IconButton9 = New FontAwesome.Sharp.IconButton()
+        Me.sub2 = New System.Windows.Forms.Panel()
         Me.IconButton7 = New FontAwesome.Sharp.IconButton()
         Me.IconButton8 = New FontAwesome.Sharp.IconButton()
         Me.IconButton5 = New FontAwesome.Sharp.IconButton()
+        Me.sub1 = New System.Windows.Forms.Panel()
         Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.menup = New System.Windows.Forms.Panel()
+        Me.logop = New System.Windows.Forms.Panel()
         Me.logo = New System.Windows.Forms.PictureBox()
+        Me.headerp = New System.Windows.Forms.Panel()
+        Me.minbtn = New FontAwesome.Sharp.IconButton()
+        Me.maxbtn = New FontAwesome.Sharp.IconButton()
+        Me.pestañalb = New System.Windows.Forms.Label()
+        Me.iconpestaña = New FontAwesome.Sharp.IconPictureBox()
         Me.escritoriop = New System.Windows.Forms.Panel()
+        Me.logoesc = New System.Windows.Forms.PictureBox()
+        Me.fechalb = New System.Windows.Forms.Label()
+        Me.horalb = New System.Windows.Forms.Label()
+        Me.usuariolb = New System.Windows.Forms.Label()
+        Me.tpusuariopb = New System.Windows.Forms.PictureBox()
+        Me.reloj = New System.Windows.Forms.Timer(Me.components)
+        Me.footerp.SuspendLayout()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.asidep.SuspendLayout()
         Me.sub5.SuspendLayout()
         Me.sub3.SuspendLayout()
@@ -59,19 +73,57 @@ Partial Class INICIO
         Me.sub1.SuspendLayout()
         Me.menup.SuspendLayout()
         Me.logop.SuspendLayout()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.headerp.SuspendLayout()
         CType(Me.iconpestaña, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.escritoriop.SuspendLayout()
+        CType(Me.logoesc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tpusuariopb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'footerp
         '
         Me.footerp.BackColor = System.Drawing.Color.Black
+        Me.footerp.Controls.Add(Me.Label2)
+        Me.footerp.Controls.Add(Me.Label1)
+        Me.footerp.Controls.Add(Me.IconPictureBox1)
         Me.footerp.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.footerp.Location = New System.Drawing.Point(0, 611)
         Me.footerp.Name = "footerp"
         Me.footerp.Size = New System.Drawing.Size(1084, 50)
         Me.footerp.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(489, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(70, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Sullana, Peru"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(364, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(331, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "CopyRight, 2020 Martin Bueno Vilcherrez y Daniel Pereyra Ontaneda"
+        '
+        'IconPictureBox1
+        '
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Copyright
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
+        Me.IconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconPictureBox1.IconSize = 17
+        Me.IconPictureBox1.Location = New System.Drawing.Point(346, 8)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(17, 18)
+        Me.IconPictureBox1.TabIndex = 0
+        Me.IconPictureBox1.TabStop = False
         '
         'asidep
         '
@@ -91,110 +143,6 @@ Partial Class INICIO
         Me.asidep.Name = "asidep"
         Me.asidep.Size = New System.Drawing.Size(250, 461)
         Me.asidep.TabIndex = 1
-        '
-        'sub5
-        '
-        Me.sub5.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.sub5.Controls.Add(Me.IconButton18)
-        Me.sub5.Controls.Add(Me.IconButton19)
-        Me.sub5.Controls.Add(Me.IconButton20)
-        Me.sub5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.sub5.Location = New System.Drawing.Point(0, 514)
-        Me.sub5.Name = "sub5"
-        Me.sub5.Size = New System.Drawing.Size(233, 119)
-        Me.sub5.TabIndex = 10
-        '
-        'sub3
-        '
-        Me.sub3.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.sub3.Controls.Add(Me.IconButton4)
-        Me.sub3.Controls.Add(Me.IconButton10)
-        Me.sub3.Controls.Add(Me.IconButton11)
-        Me.sub3.Controls.Add(Me.IconButton12)
-        Me.sub3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.sub3.Location = New System.Drawing.Point(0, 283)
-        Me.sub3.Name = "sub3"
-        Me.sub3.Size = New System.Drawing.Size(233, 151)
-        Me.sub3.TabIndex = 6
-        '
-        'sub2
-        '
-        Me.sub2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.sub2.Controls.Add(Me.IconButton7)
-        Me.sub2.Controls.Add(Me.IconButton8)
-        Me.sub2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.sub2.Location = New System.Drawing.Point(0, 162)
-        Me.sub2.Name = "sub2"
-        Me.sub2.Size = New System.Drawing.Size(233, 81)
-        Me.sub2.TabIndex = 4
-        '
-        'sub1
-        '
-        Me.sub1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.sub1.Controls.Add(Me.IconButton3)
-        Me.sub1.Controls.Add(Me.IconButton2)
-        Me.sub1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.sub1.Location = New System.Drawing.Point(0, 40)
-        Me.sub1.Name = "sub1"
-        Me.sub1.Size = New System.Drawing.Size(233, 82)
-        Me.sub1.TabIndex = 2
-        '
-        'menup
-        '
-        Me.menup.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.menup.Controls.Add(Me.asidep)
-        Me.menup.Controls.Add(Me.logop)
-        Me.menup.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menup.Location = New System.Drawing.Point(0, 0)
-        Me.menup.Name = "menup"
-        Me.menup.Size = New System.Drawing.Size(250, 611)
-        Me.menup.TabIndex = 2
-        '
-        'logop
-        '
-        Me.logop.Controls.Add(Me.logo)
-        Me.logop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.logop.Location = New System.Drawing.Point(0, 0)
-        Me.logop.Name = "logop"
-        Me.logop.Size = New System.Drawing.Size(250, 150)
-        Me.logop.TabIndex = 3
-        '
-        'headerp
-        '
-        Me.headerp.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.headerp.Controls.Add(Me.pestañalb)
-        Me.headerp.Controls.Add(Me.iconpestaña)
-        Me.headerp.Dock = System.Windows.Forms.DockStyle.Top
-        Me.headerp.Location = New System.Drawing.Point(250, 0)
-        Me.headerp.Name = "headerp"
-        Me.headerp.Size = New System.Drawing.Size(834, 45)
-        Me.headerp.TabIndex = 3
-        '
-        'pestañalb
-        '
-        Me.pestañalb.AutoSize = True
-        Me.pestañalb.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pestañalb.ForeColor = System.Drawing.Color.Orange
-        Me.pestañalb.Location = New System.Drawing.Point(72, 17)
-        Me.pestañalb.Name = "pestañalb"
-        Me.pestañalb.Size = New System.Drawing.Size(41, 15)
-        Me.pestañalb.TabIndex = 1
-        Me.pestañalb.Text = "INICIO"
-        '
-        'iconpestaña
-        '
-        Me.iconpestaña.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.iconpestaña.ForeColor = System.Drawing.Color.Orange
-        Me.iconpestaña.IconChar = FontAwesome.Sharp.IconChar.Home
-        Me.iconpestaña.IconColor = System.Drawing.Color.Orange
-        Me.iconpestaña.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.iconpestaña.IconSize = 30
-        Me.iconpestaña.Location = New System.Drawing.Point(44, 10)
-        Me.iconpestaña.Name = "iconpestaña"
-        Me.iconpestaña.Size = New System.Drawing.Size(32, 32)
-        Me.iconpestaña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.iconpestaña.TabIndex = 0
-        Me.iconpestaña.TabStop = False
         '
         'IconButton21
         '
@@ -216,6 +164,18 @@ Partial Class INICIO
         Me.IconButton21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.IconButton21.UseVisualStyleBackColor = True
+        '
+        'sub5
+        '
+        Me.sub5.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.sub5.Controls.Add(Me.IconButton18)
+        Me.sub5.Controls.Add(Me.IconButton19)
+        Me.sub5.Controls.Add(Me.IconButton20)
+        Me.sub5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.sub5.Location = New System.Drawing.Point(0, 514)
+        Me.sub5.Name = "sub5"
+        Me.sub5.Size = New System.Drawing.Size(233, 119)
+        Me.sub5.TabIndex = 10
         '
         'IconButton18
         '
@@ -300,6 +260,19 @@ Partial Class INICIO
         Me.IconButton13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.IconButton13.UseVisualStyleBackColor = True
+        '
+        'sub3
+        '
+        Me.sub3.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.sub3.Controls.Add(Me.IconButton4)
+        Me.sub3.Controls.Add(Me.IconButton10)
+        Me.sub3.Controls.Add(Me.IconButton11)
+        Me.sub3.Controls.Add(Me.IconButton12)
+        Me.sub3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.sub3.Location = New System.Drawing.Point(0, 283)
+        Me.sub3.Name = "sub3"
+        Me.sub3.Size = New System.Drawing.Size(233, 151)
+        Me.sub3.TabIndex = 6
         '
         'IconButton4
         '
@@ -406,6 +379,17 @@ Partial Class INICIO
         Me.IconButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.IconButton9.UseVisualStyleBackColor = True
         '
+        'sub2
+        '
+        Me.sub2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.sub2.Controls.Add(Me.IconButton7)
+        Me.sub2.Controls.Add(Me.IconButton8)
+        Me.sub2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.sub2.Location = New System.Drawing.Point(0, 162)
+        Me.sub2.Name = "sub2"
+        Me.sub2.Size = New System.Drawing.Size(233, 81)
+        Me.sub2.TabIndex = 4
+        '
         'IconButton7
         '
         Me.IconButton7.Dock = System.Windows.Forms.DockStyle.Top
@@ -468,6 +452,17 @@ Partial Class INICIO
         Me.IconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.IconButton5.UseVisualStyleBackColor = True
+        '
+        'sub1
+        '
+        Me.sub1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.sub1.Controls.Add(Me.IconButton3)
+        Me.sub1.Controls.Add(Me.IconButton2)
+        Me.sub1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.sub1.Location = New System.Drawing.Point(0, 40)
+        Me.sub1.Name = "sub1"
+        Me.sub1.Size = New System.Drawing.Size(233, 82)
+        Me.sub1.TabIndex = 2
         '
         'IconButton3
         '
@@ -532,6 +527,26 @@ Partial Class INICIO
         Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.IconButton1.UseVisualStyleBackColor = True
         '
+        'menup
+        '
+        Me.menup.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.menup.Controls.Add(Me.asidep)
+        Me.menup.Controls.Add(Me.logop)
+        Me.menup.Dock = System.Windows.Forms.DockStyle.Left
+        Me.menup.Location = New System.Drawing.Point(0, 0)
+        Me.menup.Name = "menup"
+        Me.menup.Size = New System.Drawing.Size(250, 611)
+        Me.menup.TabIndex = 2
+        '
+        'logop
+        '
+        Me.logop.Controls.Add(Me.logo)
+        Me.logop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.logop.Location = New System.Drawing.Point(0, 0)
+        Me.logop.Name = "logop"
+        Me.logop.Size = New System.Drawing.Size(250, 150)
+        Me.logop.TabIndex = 3
+        '
         'logo
         '
         Me.logo.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -543,14 +558,149 @@ Partial Class INICIO
         Me.logo.TabIndex = 0
         Me.logo.TabStop = False
         '
+        'headerp
+        '
+        Me.headerp.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.headerp.Controls.Add(Me.minbtn)
+        Me.headerp.Controls.Add(Me.maxbtn)
+        Me.headerp.Controls.Add(Me.pestañalb)
+        Me.headerp.Controls.Add(Me.iconpestaña)
+        Me.headerp.Dock = System.Windows.Forms.DockStyle.Top
+        Me.headerp.Location = New System.Drawing.Point(250, 0)
+        Me.headerp.Name = "headerp"
+        Me.headerp.Size = New System.Drawing.Size(834, 45)
+        Me.headerp.TabIndex = 3
+        '
+        'minbtn
+        '
+        Me.minbtn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.minbtn.FlatAppearance.BorderSize = 0
+        Me.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.minbtn.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
+        Me.minbtn.IconColor = System.Drawing.Color.Black
+        Me.minbtn.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.minbtn.IconSize = 40
+        Me.minbtn.Location = New System.Drawing.Point(730, 0)
+        Me.minbtn.Name = "minbtn"
+        Me.minbtn.Size = New System.Drawing.Size(52, 45)
+        Me.minbtn.TabIndex = 4
+        Me.minbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.minbtn.UseVisualStyleBackColor = True
+        '
+        'maxbtn
+        '
+        Me.maxbtn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.maxbtn.FlatAppearance.BorderSize = 0
+        Me.maxbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.maxbtn.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
+        Me.maxbtn.IconColor = System.Drawing.Color.Black
+        Me.maxbtn.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.maxbtn.IconSize = 40
+        Me.maxbtn.Location = New System.Drawing.Point(782, 0)
+        Me.maxbtn.Name = "maxbtn"
+        Me.maxbtn.Size = New System.Drawing.Size(52, 45)
+        Me.maxbtn.TabIndex = 3
+        Me.maxbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.maxbtn.UseVisualStyleBackColor = True
+        '
+        'pestañalb
+        '
+        Me.pestañalb.AutoSize = True
+        Me.pestañalb.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pestañalb.ForeColor = System.Drawing.Color.Orange
+        Me.pestañalb.Location = New System.Drawing.Point(72, 17)
+        Me.pestañalb.Name = "pestañalb"
+        Me.pestañalb.Size = New System.Drawing.Size(41, 15)
+        Me.pestañalb.TabIndex = 1
+        Me.pestañalb.Text = "INICIO"
+        '
+        'iconpestaña
+        '
+        Me.iconpestaña.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.iconpestaña.ForeColor = System.Drawing.Color.Orange
+        Me.iconpestaña.IconChar = FontAwesome.Sharp.IconChar.Home
+        Me.iconpestaña.IconColor = System.Drawing.Color.Orange
+        Me.iconpestaña.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.iconpestaña.IconSize = 30
+        Me.iconpestaña.Location = New System.Drawing.Point(44, 10)
+        Me.iconpestaña.Name = "iconpestaña"
+        Me.iconpestaña.Size = New System.Drawing.Size(32, 32)
+        Me.iconpestaña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.iconpestaña.TabIndex = 0
+        Me.iconpestaña.TabStop = False
+        '
         'escritoriop
         '
         Me.escritoriop.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.escritoriop.Controls.Add(Me.logoesc)
+        Me.escritoriop.Controls.Add(Me.fechalb)
+        Me.escritoriop.Controls.Add(Me.horalb)
+        Me.escritoriop.Controls.Add(Me.usuariolb)
+        Me.escritoriop.Controls.Add(Me.tpusuariopb)
         Me.escritoriop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.escritoriop.Location = New System.Drawing.Point(250, 45)
         Me.escritoriop.Name = "escritoriop"
         Me.escritoriop.Size = New System.Drawing.Size(834, 566)
         Me.escritoriop.TabIndex = 4
+        '
+        'logoesc
+        '
+        Me.logoesc.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.logoesc.Image = Global.Mi_Almacen.My.Resources.Resources._027_distribution
+        Me.logoesc.Location = New System.Drawing.Point(276, 143)
+        Me.logoesc.Name = "logoesc"
+        Me.logoesc.Size = New System.Drawing.Size(235, 194)
+        Me.logoesc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.logoesc.TabIndex = 4
+        Me.logoesc.TabStop = False
+        '
+        'fechalb
+        '
+        Me.fechalb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.fechalb.AutoSize = True
+        Me.fechalb.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fechalb.ForeColor = System.Drawing.Color.White
+        Me.fechalb.Location = New System.Drawing.Point(237, 432)
+        Me.fechalb.Name = "fechalb"
+        Me.fechalb.Size = New System.Drawing.Size(69, 26)
+        Me.fechalb.TabIndex = 3
+        Me.fechalb.Text = "Label2"
+        '
+        'horalb
+        '
+        Me.horalb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.horalb.AutoSize = True
+        Me.horalb.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.horalb.ForeColor = System.Drawing.Color.White
+        Me.horalb.Location = New System.Drawing.Point(289, 380)
+        Me.horalb.Name = "horalb"
+        Me.horalb.Size = New System.Drawing.Size(104, 39)
+        Me.horalb.TabIndex = 2
+        Me.horalb.Text = "Label1"
+        '
+        'usuariolb
+        '
+        Me.usuariolb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.usuariolb.AutoSize = True
+        Me.usuariolb.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.usuariolb.ForeColor = System.Drawing.Color.White
+        Me.usuariolb.Location = New System.Drawing.Point(84, 26)
+        Me.usuariolb.Name = "usuariolb"
+        Me.usuariolb.Size = New System.Drawing.Size(69, 26)
+        Me.usuariolb.TabIndex = 1
+        Me.usuariolb.Text = "Label1"
+        '
+        'tpusuariopb
+        '
+        Me.tpusuariopb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.tpusuariopb.Location = New System.Drawing.Point(43, 26)
+        Me.tpusuariopb.Name = "tpusuariopb"
+        Me.tpusuariopb.Size = New System.Drawing.Size(35, 31)
+        Me.tpusuariopb.TabIndex = 0
+        Me.tpusuariopb.TabStop = False
+        '
+        'reloj
+        '
         '
         'INICIO
         '
@@ -564,6 +714,9 @@ Partial Class INICIO
         Me.MinimumSize = New System.Drawing.Size(1100, 700)
         Me.Name = "INICIO"
         Me.Text = "INICIO"
+        Me.footerp.ResumeLayout(False)
+        Me.footerp.PerformLayout()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.asidep.ResumeLayout(False)
         Me.sub5.ResumeLayout(False)
         Me.sub3.ResumeLayout(False)
@@ -571,10 +724,14 @@ Partial Class INICIO
         Me.sub1.ResumeLayout(False)
         Me.menup.ResumeLayout(False)
         Me.logop.ResumeLayout(False)
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.headerp.ResumeLayout(False)
         Me.headerp.PerformLayout()
         CType(Me.iconpestaña, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.escritoriop.ResumeLayout(False)
+        Me.escritoriop.PerformLayout()
+        CType(Me.logoesc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tpusuariopb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -609,4 +766,15 @@ Partial Class INICIO
     Friend WithEvents pestañalb As Label
     Friend WithEvents logo As PictureBox
     Friend WithEvents escritoriop As Panel
+    Friend WithEvents minbtn As FontAwesome.Sharp.IconButton
+    Friend WithEvents maxbtn As FontAwesome.Sharp.IconButton
+    Friend WithEvents usuariolb As Label
+    Friend WithEvents tpusuariopb As PictureBox
+    Friend WithEvents logoesc As PictureBox
+    Friend WithEvents fechalb As Label
+    Friend WithEvents horalb As Label
+    Friend WithEvents reloj As Timer
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
 End Class

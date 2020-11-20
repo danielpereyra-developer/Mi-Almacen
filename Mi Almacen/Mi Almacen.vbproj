@@ -265,6 +265,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Imagenes\Logo_header_desktop.png" />
+    <Content Include="Imagenes\004-worker.png" />
+    <Content Include="Imagenes\006-delivery man.png" />
+    <Content Include="Imagenes\009-employee.png" />
     <Content Include="Imagenes\027-distribution.png" />
     <None Include="bin\Debug\Imagenes\009-checklist.png" />
     <Content Include="Imagenes\027-distribution.ico" />

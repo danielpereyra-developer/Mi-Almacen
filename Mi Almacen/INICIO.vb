@@ -1,8 +1,12 @@
-﻿Imports FontAwesome.Sharp
+﻿
+Imports FontAwesome.Sharp
 Public Class INICIO
     Private actualbtn As IconButton
     Private actualsubbtn As IconButton
     Private borde As New Panel
+    Private actualhijo As Form
+    Dim ex, ey As Integer
+    Dim Arrastre As Boolean
 
     Public Sub New()
 
@@ -12,12 +16,31 @@ Public Class INICIO
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         borde.Size = New Size(7, 40)
         asidep.Controls.Add(borde)
+
+        Me.Text = String.Empty
+        Me.ControlBox = False
+        Me.DoubleBuffered = True
+        Me.MaximizedBounds = Screen.PrimaryScreen.WorkingArea
+        Me.FormBorderStyle = FormBorderStyle.None
+
     End Sub
     Private Sub INICIO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OcultarSubMenu()
-
+        If Login.tpus = "JA" Then
+            tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\006-delivery man.png")
+        ElseIf Login.tpus = "TB" Then
+            tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\004-worker.png")
+        ElseIf Login.tpus = "AD" Then
+            tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\009-employee.png")
+        End If
+        usuariolb.Text = Login.user
+        horalb.Text = Now.ToString("hh:mm:ss tt")
+        fechalb.Text = DateTime.Now.ToString("D")
+        reloj.Enabled = True
+        reloj.Interval = 1000
     End Sub
 
+#Region "Metodos"
     Private Sub activobtn(senderbtn As Object, customcolor As Color)
         If senderbtn IsNot Nothing Then
             desactivarbtn()
@@ -34,10 +57,6 @@ Public Class INICIO
             borde.Visible = True
             borde.BringToFront()
 
-            iconpestaña.IconChar = actualbtn.IconChar
-            iconpestaña.IconColor = customcolor
-            pestañalb.Text = actualbtn.Text
-            pestañalb.ForeColor = customcolor
         End If
     End Sub
 
@@ -106,6 +125,23 @@ Public Class INICIO
         End If
     End Sub
 
+    Public Sub AbrirHijo(formhijo As Form)
+        If actualhijo IsNot Nothing Then
+            actualhijo.Close()
+        End If
+        actualhijo = formhijo
+        formhijo.TopLevel = False
+        formhijo.FormBorderStyle = FormBorderStyle.None
+        formhijo.Dock = DockStyle.Fill
+        escritoriop.Controls.Add(formhijo)
+        escritoriop.Tag = formhijo
+        formhijo.BringToFront()
+        formhijo.Show()
+        pestañalb.Text = formhijo.Text
+    End Sub
+
+#End Region
+
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
         MostrarSubMenu(sub1)
         activobtn(sender, Color.FromArgb(102, 255, 102))
@@ -138,6 +174,7 @@ Public Class INICIO
 
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
         activosubbtn(sender, Color.FromArgb(178, 255, 102))
+        AbrirHijo(New USUARIOS)
     End Sub
 
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
@@ -168,8 +205,61 @@ Public Class INICIO
         activosubbtn(sender, Color.FromArgb(102, 178, 255))
     End Sub
 
+    Private Sub headerp_MouseDown(sender As Object, e As MouseEventArgs) Handles headerp.MouseDown
+        ex = e.X
+        ey = e.Y
+        Arrastre = True
+    End Sub
+
+
     Private Sub logo_Click(sender As Object, e As EventArgs) Handles logo.Click
+        If actualhijo IsNot Nothing Then
+            actualhijo.Close()
+        End If
         desactivarbtn()
+        desactivarsubbtn()
         OcultarSubMenu()
+    End Sub
+
+    Private Sub headerp_MouseUp(sender As Object, e As MouseEventArgs) Handles headerp.MouseUp
+        Arrastre = False
+    End Sub
+
+    Private Sub maxbtn_Click(sender As Object, e As EventArgs) Handles maxbtn.Click
+        If WindowState = FormWindowState.Normal Then
+            WindowState = FormWindowState.Maximized
+        Else
+            WindowState = FormWindowState.Normal
+        End If
+    End Sub
+
+    Private Sub minbtn_Click(sender As Object, e As EventArgs) Handles minbtn.Click
+        WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub reloj_Tick(sender As Object, e As EventArgs) Handles reloj.Tick
+        horalb.Text = Now.ToString("hh:mm:ss tt")
+    End Sub
+
+    Private Sub maxbtn_MouseHover(sender As Object, e As EventArgs) Handles maxbtn.MouseHover
+        maxbtn.BackColor = Color.FromArgb(51, 153, 255)
+    End Sub
+
+    Private Sub headerp_MouseMove(sender As Object, e As MouseEventArgs) Handles headerp.MouseMove
+        If Arrastre Then
+            Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
+        End If
+    End Sub
+
+    Private Sub maxbtn_MouseLeave(sender As Object, e As EventArgs) Handles maxbtn.MouseLeave
+        maxbtn.BackColor = Color.FromArgb(26, 25, 62)
+    End Sub
+
+    Private Sub minbtn_MouseHover(sender As Object, e As EventArgs) Handles minbtn.MouseHover
+        minbtn.BackColor = Color.FromArgb(51, 153, 255)
+    End Sub
+
+    Private Sub minbtn_MouseLeave(sender As Object, e As EventArgs) Handles minbtn.MouseLeave
+        minbtn.BackColor = Color.FromArgb(26, 25, 62)
     End Sub
 End Class

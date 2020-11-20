@@ -3,6 +3,7 @@ Imports System.Data.SqlClient
 
 Public Class Login
     Public user As String
+    Public tpus As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Probar la conexion
         If My.Computer.Network.IsAvailable() Then
@@ -22,9 +23,7 @@ Public Class Login
 
         'Establece conexion con la BD
         conectar()
-
-
-
+        desconectar()
 
     End Sub
 
@@ -44,19 +43,19 @@ Public Class Login
             nomuser = ds.Tables("USUARIOS").Rows(0)("NOMBRE").ToString()
             paswtemp = ds.Tables("USUARIOS").Rows(0)("PASSWORD").ToString()
             user = nomuser
+            tpus = Mid(codustemp, 1, 2)
 
             If passtxt.Text = paswtemp And usertxt.Text = nomuser Then
                 Dim sqlinsr As String = "INSERT INTO LOGEO(ID_USUARIO,FECHA_INGRESO,FECHA_SALIDA) VALUES('" + codustemp + "',@fing,null)"
                 Dim cmd2 As New SqlCommand(sqlinsr, con)
                 cmd2.Parameters.Add("@fing", SqlDbType.DateTime).Value = Now
 
-                'con.Open()
+                con.Open()
                 cmd2.ExecuteNonQuery()
-                desconectar()
+                con.Close()
 
-                Principal.userlb.Text = nomuser
-                Principal.Show()
-                Me.Hide()
+                INICIO.Show()
+                Me.Close()
 
             Else
                 MsgBox("La contraseña es incorrecta")
