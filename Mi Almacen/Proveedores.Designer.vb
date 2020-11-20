@@ -37,49 +37,56 @@ Partial Class Proveedores
         '
         'nomptxt
         '
-        Me.nomptxt.Location = New System.Drawing.Point(370, 92)
+        Me.nomptxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.nomptxt.Location = New System.Drawing.Point(430, 120)
         Me.nomptxt.Name = "nomptxt"
         Me.nomptxt.Size = New System.Drawing.Size(281, 20)
         Me.nomptxt.TabIndex = 1
         '
         'rucptxt
         '
-        Me.rucptxt.Location = New System.Drawing.Point(370, 141)
+        Me.rucptxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.rucptxt.Location = New System.Drawing.Point(430, 169)
         Me.rucptxt.Name = "rucptxt"
         Me.rucptxt.Size = New System.Drawing.Size(281, 20)
         Me.rucptxt.TabIndex = 2
         '
         'peptxt
         '
-        Me.peptxt.Location = New System.Drawing.Point(370, 282)
+        Me.peptxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.peptxt.Location = New System.Drawing.Point(430, 310)
         Me.peptxt.Name = "peptxt"
         Me.peptxt.Size = New System.Drawing.Size(281, 20)
         Me.peptxt.TabIndex = 5
         '
         'telptxt
         '
-        Me.telptxt.Location = New System.Drawing.Point(370, 233)
+        Me.telptxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.telptxt.Location = New System.Drawing.Point(430, 261)
         Me.telptxt.Name = "telptxt"
         Me.telptxt.Size = New System.Drawing.Size(281, 20)
         Me.telptxt.TabIndex = 4
         '
         'dirptxt
         '
-        Me.dirptxt.Location = New System.Drawing.Point(370, 185)
+        Me.dirptxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.dirptxt.Location = New System.Drawing.Point(430, 213)
         Me.dirptxt.Name = "dirptxt"
         Me.dirptxt.Size = New System.Drawing.Size(281, 20)
         Me.dirptxt.TabIndex = 3
         '
         'telpeptxt
         '
-        Me.telpeptxt.Location = New System.Drawing.Point(370, 330)
+        Me.telpeptxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.telpeptxt.Location = New System.Drawing.Point(430, 358)
         Me.telpeptxt.Name = "telpeptxt"
         Me.telpeptxt.Size = New System.Drawing.Size(281, 20)
         Me.telpeptxt.TabIndex = 6
         '
         'imgpb
         '
-        Me.imgpb.Location = New System.Drawing.Point(38, 92)
+        Me.imgpb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.imgpb.Location = New System.Drawing.Point(98, 120)
         Me.imgpb.Name = "imgpb"
         Me.imgpb.Size = New System.Drawing.Size(287, 297)
         Me.imgpb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -88,8 +95,9 @@ Partial Class Proveedores
         '
         'regbtn
         '
+        Me.regbtn.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.regbtn.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.regbtn.Location = New System.Drawing.Point(446, 407)
+        Me.regbtn.Location = New System.Drawing.Point(506, 435)
         Me.regbtn.Name = "regbtn"
         Me.regbtn.Size = New System.Drawing.Size(187, 31)
         Me.regbtn.TabIndex = 8
@@ -98,7 +106,8 @@ Partial Class Proveedores
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(38, 395)
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button4.Location = New System.Drawing.Point(98, 423)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 13
@@ -113,7 +122,8 @@ Partial Class Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(699, 471)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(818, 527)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.regbtn)
         Me.Controls.Add(Me.imgpb)
@@ -123,8 +133,9 @@ Partial Class Proveedores
         Me.Controls.Add(Me.dirptxt)
         Me.Controls.Add(Me.rucptxt)
         Me.Controls.Add(Me.nomptxt)
+        Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "Proveedores"
-        Me.Text = "Proveedores"
+        Me.Text = "NUEVO PROVEEDOR"
         CType(Me.imgpb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

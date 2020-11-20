@@ -1,4 +1,5 @@
 ﻿
+Imports System.Data.SqlClient
 Imports FontAwesome.Sharp
 Public Class INICIO
     Private actualbtn As IconButton
@@ -170,6 +171,20 @@ Public Class INICIO
     Private Sub IconButton21_Click(sender As Object, e As EventArgs) Handles IconButton21.Click
         OcultarSubMenu()
         activobtn(sender, Color.FromArgb(102, 255, 255))
+        Dim sqlupd As String = "UPDATE LOGEO SET FECHA_SALIDA=@fsal WHERE LOGEO.ID_USUARIO='" + Login.codus + "'"
+        Dim cmd As New SqlCommand(sqlupd, con)
+        cmd.Parameters.Add("@fsal", SqlDbType.DateTime).Value = Now
+
+        Try
+            con.Open()
+            cmd.ExecuteNonQuery()
+            con.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        MsgBox("Hasta Luego")
+        End
     End Sub
 
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
@@ -183,6 +198,7 @@ Public Class INICIO
 
     Private Sub IconButton8_Click(sender As Object, e As EventArgs) Handles IconButton8.Click
         activosubbtn(sender, Color.FromArgb(255, 153, 153))
+        AbrirHijo(New Proveedores)
     End Sub
 
     Private Sub IconButton7_Click(sender As Object, e As EventArgs) Handles IconButton7.Click

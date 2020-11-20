@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Public Class Login
     Public user As String
     Public tpus As String
+    Public codus As String
     Private borderbottom1 As New Panel
     Private borderbottom2 As New Panel
 
@@ -147,7 +148,7 @@ Public Class Login
                     paswtemp = ds.Tables("USUARIOS").Rows(0)("PASSWORD").ToString()
                     user = nomuser
                     tpus = Mid(codustemp, 1, 2)
-                    MsgBox(tpus)
+                    codus = codustemp
 
                     If passtxt.Text = paswtemp Then
                         Dim sqlinsr As String = "INSERT INTO LOGEO(ID_USUARIO,FECHA_INGRESO,FECHA_SALIDA) VALUES('" + codustemp + "',@fing,null)"

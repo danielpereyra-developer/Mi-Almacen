@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class USUARIOS
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,8 @@ Partial Class USUARIOS
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.imgpb = New System.Windows.Forms.PictureBox()
         Me.pnomtxt = New System.Windows.Forms.TextBox()
         Me.apetxt = New System.Windows.Forms.TextBox()
         Me.celtxt = New System.Windows.Forms.TextBox()
@@ -40,20 +39,12 @@ Partial Class USUARIOS
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Archivos = New System.Windows.Forms.OpenFileDialog()
-        CType(Me.imgpb, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.imgpb = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.imgpb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'imgpb
-        '
-        Me.imgpb.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.imgpb.Location = New System.Drawing.Point(23, 54)
-        Me.imgpb.Name = "imgpb"
-        Me.imgpb.Size = New System.Drawing.Size(327, 335)
-        Me.imgpb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imgpb.TabIndex = 0
-        Me.imgpb.TabStop = False
         '
         'pnomtxt
         '
@@ -71,7 +62,7 @@ Partial Class USUARIOS
         '
         'celtxt
         '
-        Me.celtxt.Location = New System.Drawing.Point(202, 78)
+        Me.celtxt.Location = New System.Drawing.Point(202, 71)
         Me.celtxt.Name = "celtxt"
         Me.celtxt.Size = New System.Drawing.Size(144, 20)
         Me.celtxt.TabIndex = 3
@@ -79,7 +70,7 @@ Partial Class USUARIOS
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(56, 81)
+        Me.Label1.Location = New System.Drawing.Point(56, 74)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(116, 13)
         Me.Label1.TabIndex = 4
@@ -94,23 +85,23 @@ Partial Class USUARIOS
         Me.GroupBox1.Controls.Add(Me.celtxt)
         Me.GroupBox1.Controls.Add(Me.apetxt)
         Me.GroupBox1.Controls.Add(Me.pnomtxt)
-        Me.GroupBox1.Location = New System.Drawing.Point(378, 40)
+        Me.GroupBox1.Location = New System.Drawing.Point(378, 55)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(397, 163)
+        Me.GroupBox1.Size = New System.Drawing.Size(397, 148)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Personales"
         '
         'edadtxt
         '
-        Me.edadtxt.Location = New System.Drawing.Point(202, 115)
+        Me.edadtxt.Location = New System.Drawing.Point(202, 108)
         Me.edadtxt.Name = "edadtxt"
         Me.edadtxt.Size = New System.Drawing.Size(100, 20)
         Me.edadtxt.TabIndex = 6
         '
         'dnitxt
         '
-        Me.dnitxt.Location = New System.Drawing.Point(59, 115)
+        Me.dnitxt.Location = New System.Drawing.Point(59, 108)
         Me.dnitxt.Name = "dnitxt"
         Me.dnitxt.Size = New System.Drawing.Size(100, 20)
         Me.dnitxt.TabIndex = 5
@@ -205,11 +196,34 @@ Partial Class USUARIOS
         '
         Me.Archivos.Filter = "JPG |*.jpg|PNG|*.png"
         '
+        'imgpb
+        '
+        Me.imgpb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.imgpb.Image = Global.Mi_Almacen.My.Resources.Resources.usuario
+        Me.imgpb.Location = New System.Drawing.Point(23, 55)
+        Me.imgpb.Name = "imgpb"
+        Me.imgpb.Size = New System.Drawing.Size(327, 335)
+        Me.imgpb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgpb.TabIndex = 0
+        Me.imgpb.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(37, 18)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(500, 13)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "* Ingrese los datos del nuevo usuario. LLene todos los campos de forma correcta p" &
+    "ara un registro exitoso"
+        '
         'USUARIOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(178, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(818, 527)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.GroupBox2)
@@ -218,12 +232,13 @@ Partial Class USUARIOS
         Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "USUARIOS"
         Me.Text = " NUEVO USUARIO"
-        CType(Me.imgpb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.imgpb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -245,4 +260,5 @@ Partial Class USUARIOS
     Friend WithEvents tccb As ComboBox
     Friend WithEvents Button4 As Button
     Friend WithEvents Archivos As OpenFileDialog
+    Friend WithEvents Label3 As Label
 End Class
