@@ -269,7 +269,7 @@ Module Reportes
         Return dtable
     End Function
 
-    Sub pdfEntrada(ByVal sfdr As SaveFileDialog, ByVal dt As DataTable, ByVal qr As Byte())
+    Sub pdfEntrada(ByVal sfdr As SaveFileDialog, ByVal qr As Byte())
         sfdr.ShowDialog()
         Dim ruta As String = sfdr.FileName
         pdfWrite = PdfWriter.GetInstance(pdfdoc, New FileStream(ruta, FileMode.Create))
@@ -391,7 +391,8 @@ Module Reportes
         col2 = New PdfPCell(New Phrase(Entrada.provtxt.Text, FontB8))
         col2.Border = 0
         tabla2.AddCell(col2)
-
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
         tabla2.AddCell(CLinea)
 
         tabla2.AddCell(Cvacio)
@@ -467,6 +468,8 @@ Module Reportes
         pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
         tablaD.AddCell(pdfcell)
 
+        Dim dt As DataTable = getDataTableEntrada()
+
         For i = 0 To dt.Rows.Count - 1
             For j = 0 To dt.Columns.Count - 1
                 pdfcell = New PdfPCell(New Paragraph(dt.Rows(i)(j).ToString, pfila))
@@ -487,6 +490,12 @@ Module Reportes
         Dim whidths3 As Single() = New Single() {2.0F, 8.0F, 3.0F, 2.0F, 2.0F}
         tabla3.WidthPercentage = 95
         tabla3.SetWidths(whidths3)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+        tabla3.AddCell(Cvacio)
+
         tabla3.AddCell(Cvacio)
         tabla3.AddCell(Cvacio)
         tabla3.AddCell(Cvacio)
@@ -527,6 +536,74 @@ Module Reportes
 
 #End Region
 
+        pdfdoc.Close()
+
+        Process.Start(ruta)
+
     End Sub
+
+    Private Function getDataTableEntrada()
+        Dim dtable As New DataTable("dt")
+        Dim sqlvac As String = "SELECT DETALLE_ENTRADA.ID_PRODUCTO,PRODUCTOS.NOM_PRODUCTO, PRODUCTOS.MARCA_PRODUCTO, PRODUCTOS.MODELO_PRODUCTO, PRODUCTOS.PU_PRODUCTO,DETALLE_ENTRADA.CANTIDAD,DETALLE_ENTRADA.TOTAL FROM DETALLE_ENTRADA
+        INNER Join PRODUCTOS ON DETALLE_ENTRADA.ID_PRODUCTO=PRODUCTOS.ID_PRODUCTO WHERE DETALLE_ENTRADA.ID_ENTRADA='" + Entrada.identxt.Text + "'"
+
+        Dim cmd5 As New SqlCommand(sqlvac, con)
+
+        Dim CantReg As Integer
+        Dim sql2 As String = "SELECT COUNT(*) FROM DETALLE_ENTRADA WHERE DETALLE_ENTRADA.ID_ENTRADA='" + Entrada.identxt.Text + "'"
+        Dim cmd As New SqlCommand(sql2, con)
+        Dim rs As SqlDataReader
+
+        con.Open()
+        rs = cmd.ExecuteReader
+        rs.Read()
+        CantReg = CInt(rs(0))
+        con.Close()
+
+        Try
+            Dim da As New SqlDataAdapter(cmd5)
+            'Dim ds As New DataSet
+
+            da.Fill(dtable)
+
+            'Dim dcolum1 As New DataColumn("ID", GetType(String))
+            'Dim dcolum2 As New DataColumn("NOMBRE", GetType(String))
+            'Dim dcolum3 As New DataColumn("MARCA", GetType(String))
+            'Dim dcolum4 As New DataColumn("MODELO", GetType(String))
+            'Dim dcolum5 As New DataColumn("EXISTENCIAS", GetType(String))
+            'Dim dcolum6 As New DataColumn("P. UNITARIO", GetType(String))
+
+
+            'dtable.Columns.Add(dcolum1)
+            'dtable.Columns.Add(dcolum2)
+            'dtable.Columns.Add(dcolum3)
+            'dtable.Columns.Add(dcolum4)
+            'dtable.Columns.Add(dcolum5)
+            'dtable.Columns.Add(dcolum6)
+
+
+            'Dim row As DataRow
+            'For i = 0 To CantReg - 1
+            'Row = dtable.NewRow
+            'Row(dcolum1) = ds.Tables("PRODUCTOS").Rows(i)("ID_PRODUCTO").ToString()
+            'Row(dcolum2) = ds.Tables("PRODUCTOS").Rows(i)("NOM_PRODUCTO").ToString()
+            'Row(dcolum3) = ds.Tables("PRODUCTOS").Rows(i)("MARCA_PRODUCTO").ToString()
+            'Row(dcolum4) = ds.Tables("PRODUCTOS").Rows(i)("MODELO_PRODUCTO").ToString()
+            'Row(dcolum5) = ds.Tables("PRODUCTOS").Rows(i)("EX_PRODUCTO").ToString()
+            'Row(dcolum6) = ds.Tables("PRODUCTOS").Rows(i)("PU_PRODUCTO").ToString()
+
+            'dtable.Rows.Add(row)
+            'Next
+
+            'dtable.AcceptChanges()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Return dtable
+    End Function
+
+
 
 End Module

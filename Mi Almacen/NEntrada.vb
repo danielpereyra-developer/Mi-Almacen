@@ -33,9 +33,9 @@ Public Class NEntrada
         Dim npr As Integer
 
         con.Open()
-        rs2 = cmd2.ExecuteReader
+        rs2 = cmd3.ExecuteReader
         rs2.Read()
-        npr = CInt(rs(0))
+        npr = CInt(rs2(0))
         con.Close()
 
         Try
@@ -66,7 +66,8 @@ Public Class NEntrada
         id = identtxt.Text
         prov = provcb.Text
         idprov = pro(provcb.SelectedIndex + 1)
-        INICIO.AbrirHijo(New Entrada)
+        INICIO.AbrirHijo(Entrada)
+        Me.Hide()
 
     End Sub
 End Class

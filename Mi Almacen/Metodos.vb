@@ -31,7 +31,7 @@ Module Metodos
 
     Public Function generarqr(contenido As String) As Image
         Dim qrgen As New QRCodeGenerator
-        Dim qrdatos As QRCodeData = qrgen.CreateQrCode(contenido, QRCoder.QRCodeGenerator.ECCLevel.H)
+        Dim qrdatos As QRCodeData = qrgen.CreateQrCode(contenido, QRCodeGenerator.ECCLevel.H)
         Dim qrcod As New QRCode(qrdatos)
 
         Dim qrimg As Bitmap = qrcod.GetGraphic(5, Color.Black, Color.White, True)

@@ -57,19 +57,46 @@ Public Class Entrada
 
     Private Sub grabbtn_Click(sender As Object, e As EventArgs) Handles grabbtn.Click
         If dtable.Rows.Count > 0 Then
-            con.Open()
-            Dim transaccion As SqlTransaction = con.BeginTransaction
-            Dim bulk As New SqlBulkCopy(con, SqlBulkCopyOptions.Default, transaccion)
+            Dim auxdt As New DataTable
+
+            Dim auxdcolum1 As New DataColumn("ID_ENTRADA", GetType(String))
+            Dim auxdcolum2 As New DataColumn("ID_DETALLE_ENTRADA", GetType(String))
+            Dim auxdcolum3 As New DataColumn("ID_PRODUCTO", GetType(String))
+            Dim auxdcolum4 As New DataColumn("CANTIDAD", GetType(String))
+            Dim auxdcolum5 As New DataColumn("TOTAL", GetType(String))
+
+            auxdt.Columns.Add(auxdcolum1)
+            auxdt.Columns.Add(auxdcolum2)
+            auxdt.Columns.Add(auxdcolum3)
+            auxdt.Columns.Add(auxdcolum4)
+            auxdt.Columns.Add(auxdcolum5)
+
+            For i = 0 To dtable.Rows.Count - 1
+                Dim row As DataRow
+                row = auxdt.NewRow
+                row(auxdcolum1) = identxt.Text
+                row(auxdcolum2) = CStr(i + 1)
+                row(auxdcolum3) = dtable.Rows(i)(0).ToString
+                row(auxdcolum4) = dtable.Rows(i)(5).ToString
+                row(auxdcolum5) = dtable.Rows(i)(6).ToString
+                auxdt.Rows.Add(row)
+                auxdt.AcceptChanges()
+            Next
             Try
-                bulk.DestinationTableName = "DETALLE_ENTRADA"
-                bulk.WriteToServer(dtable)
-                transaccion.Commit()
+                con.Open()
+                Using bulkC As New SqlBulkCopy(con)
+                    bulkC.ColumnMappings.Add(0, 0)
+                    bulkC.ColumnMappings.Add(1, 1)
+                    bulkC.ColumnMappings.Add(2, 2)
+                    bulkC.ColumnMappings.Add(3, 3)
+                    bulkC.ColumnMappings.Add(4, 4)
+                    bulkC.DestinationTableName = "DETALLE_ENTRADA"
+                    bulkC.WriteToServer(auxdt)
+                End Using
                 con.Close()
             Catch ex As Exception
-                transaccion.Rollback()
-                con.Close()
+                MsgBox(ex.Message)
             End Try
-
 
             cont = identxt.Text + "," + fechtxt.Text
             Dim sqlins As String = "INSERT INTO ENTRADA VALUES('" + identxt.Text + "',@fecha,'" + Login.codus + "','" + NEntrada.idprov + "','" + subttxt.Text + "','" + igvtxt.Text + "','" + totaltxt.Text + "',@QR)"
@@ -82,9 +109,6 @@ Public Class Entrada
             con.Close()
 
             MsgBox("Registro exitoso")
-
-            dtable.Rows.Clear()
-            actualizarcostos(0)
         Else
             MsgBox("Seleccione los productos que van a ingresar")
         End If
@@ -105,6 +129,9 @@ Public Class Entrada
     End Sub
 
     Private Sub impbtn_Click(sender As Object, e As EventArgs) Handles impbtn.Click
-        pdfEntrada(sfd, dtable, ImagenAByte(generarqr(cont)))
+        pdfEntrada(sfd, ImagenAByte(generarqr(cont)))
+        dtable.Rows.Clear()
+        refrescardetalle()
+        actualizarcostos(0)
     End Sub
 End Class

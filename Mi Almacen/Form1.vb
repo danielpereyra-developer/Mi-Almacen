@@ -26,30 +26,30 @@ Public Class Login
         If My.Computer.Network.IsAvailable() Then
             Try
                 If My.Computer.Network.Ping("www.google.es", 1000) Then
-                    'MsgBox("Conectado.")
+
+                    conectar()
+                    desconectar()
+
+                    usertxt.ForeColor = Color.Gray
+                    usertxt.Text = "Nombre de Usuario"
+                    addborder(usertxt, borderbottom1)
+                    passtxt.ForeColor = Color.Gray
+                    passtxt.PasswordChar = Nothing
+                    passtxt.Text = "Contraseña"
+                    addborder(passtxt, borderbottom2)
                 Else
                     MsgBox("No se encuentra una conexion a internet.")
+                    End
                 End If
 
             Catch ex As PingException
                 MsgBox("No se encuentra una conexion a internet.")
+                End
             End Try
         Else
             MsgBox("No se encuentra una conexion a internet")
+            End
         End If
-
-        'Establece conexion con la BD
-        conectar()
-        desconectar()
-
-        usertxt.ForeColor = Color.Gray
-        usertxt.Text = "Nombre de Usuario"
-        addborder(usertxt, borderbottom1)
-        passtxt.ForeColor = Color.Gray
-        passtxt.PasswordChar = Nothing
-        passtxt.Text = "Contraseña"
-        addborder(passtxt, borderbottom2)
-
 
     End Sub
     Private Sub addborder(caja As TextBox, borde As Panel)
