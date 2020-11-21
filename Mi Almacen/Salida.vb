@@ -89,6 +89,7 @@ Public Class Salida
                 row(auxdcolum5) = dtable.Rows(i)(6).ToString
                 auxdt.Rows.Add(row)
                 auxdt.AcceptChanges()
+                actualizarexistencias(dtable.Rows(i)(5).ToString, dtable.Rows(i)(0).ToString)
             Next
             Try
                 con.Open()
@@ -127,5 +128,20 @@ Public Class Salida
         dtable.Rows.Clear()
         refrescardetalle()
         actualizarcostos(0)
+    End Sub
+
+    Public Sub actualizarexistencias(aux As Integer, cod As String)
+        Dim sqlupd As String = "UPDATE PRODUCTOS SET EX_PRODUCTO=EX_PRODUCTO-@subt WHERE PRODUCTOS.ID_PRODUCTO='" + cod + "'"
+        Dim cmd As New SqlCommand(sqlupd, con)
+        cmd.Parameters.Add("@subt", SqlDbType.Int).Value = aux
+
+        Try
+            con.Open()
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        con.Close()
     End Sub
 End Class

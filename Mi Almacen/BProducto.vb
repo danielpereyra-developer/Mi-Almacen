@@ -94,7 +94,12 @@ Public Class BProducto
 
     Private Sub canttxt_TextChanged(sender As Object, e As EventArgs) Handles canttxt.TextChanged
         If canttxt.Text <> "" And puprotxt.Text <> "" Then
-            totaltxt.Text = Convert.ToString(CDbl(puprotxt.Text) * CDbl(canttxt.Text))
+            If CInt(canttxt.Text) >= CInt(exprotxt.Text) Then
+                MsgBox("La cantidad no puede igualar o exceder al numero de existencias")
+                canttxt.Text = ""
+            Else
+                totaltxt.Text = Convert.ToString(CDbl(puprotxt.Text) * CDbl(canttxt.Text))
+            End If
         Else
             totaltxt.Text = "0.00"
         End If
@@ -113,6 +118,7 @@ Public Class BProducto
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         gendetalle(ent)
+
     End Sub
 
     Public Sub gendetalle(ban As Boolean)
@@ -139,11 +145,14 @@ Public Class BProducto
             Entrada.actualizarcostos(subtotal)
 
             If MessageBox.Show("¿Desea Añadir mas Productos?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
-                Me.Hide()
+                Me.Close()
             Else
                 MostrarProducto("")
                 filtxt.ForeColor = Color.Gray
                 filtxt.Text = "Buscar por Nombre de Producto"
+                If prodlb.Items.Count > 0 Then
+                    prodlb.SelectedIndex = 0
+                End If
             End If
         Else
 
@@ -168,7 +177,7 @@ Public Class BProducto
             Salida.actualizarcostos(subtotal)
 
             If MessageBox.Show("¿Desea Añadir mas Productos?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
-                Me.Hide()
+                Me.Close()
             Else
                 MostrarProducto("")
                 filtxt.ForeColor = Color.Gray

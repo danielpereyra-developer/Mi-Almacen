@@ -31,8 +31,8 @@ Partial Class NSalida
         Me.ususttxt = New System.Windows.Forms.TextBox()
         Me.fechasaltxt = New System.Windows.Forms.TextBox()
         Me.idsaltxt = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.clientetxt = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -120,6 +120,13 @@ Partial Class NSalida
         Me.idsaltxt.Size = New System.Drawing.Size(100, 20)
         Me.idsaltxt.TabIndex = 13
         '
+        'clientetxt
+        '
+        Me.clientetxt.Location = New System.Drawing.Point(171, 264)
+        Me.clientetxt.Name = "clientetxt"
+        Me.clientetxt.Size = New System.Drawing.Size(272, 20)
+        Me.clientetxt.TabIndex = 24
+        '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -130,13 +137,6 @@ Partial Class NSalida
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 19
         Me.PictureBox1.TabStop = False
-        '
-        'clientetxt
-        '
-        Me.clientetxt.Location = New System.Drawing.Point(171, 264)
-        Me.clientetxt.Name = "clientetxt"
-        Me.clientetxt.Size = New System.Drawing.Size(272, 20)
-        Me.clientetxt.TabIndex = 24
         '
         'NSalida
         '

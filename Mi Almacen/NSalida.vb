@@ -25,10 +25,10 @@ Public Class NSalida
 
     Private Sub ingsalbtn_Click(sender As Object, e As EventArgs) Handles ingsalbtn.Click
         Select Case (Len(Str(nsal)) - 1)
-            Case 1 : idsaltxt.Text = "E" + "000" + Trim(Str(Int(nsal + 1)))
-            Case 2 : idsaltxt.Text = "E" + "00" + Trim(Str(Int(nsal + 1)))
-            Case 3 : idsaltxt.Text = "E" + "0" + Trim(Str(Int(nsal + 1)))
-            Case 4 : idsaltxt.Text = "E" + Trim(Str(Int(nsal + 1)))
+            Case 1 : idsaltxt.Text = "S" + "000" + Trim(Str(Int(nsal + 1)))
+            Case 2 : idsaltxt.Text = "S" + "00" + Trim(Str(Int(nsal + 1)))
+            Case 3 : idsaltxt.Text = "S" + "0" + Trim(Str(Int(nsal + 1)))
+            Case 4 : idsaltxt.Text = "S " + Trim(Str(Int(nsal + 1)))
         End Select
         id = idsaltxt.Text
         client = clientetxt.Text
