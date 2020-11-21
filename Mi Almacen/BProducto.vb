@@ -2,6 +2,7 @@
 
 Public Class BProducto
     Public subtotal As Double
+    Public ent As Boolean = False
     Private Sub BProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar()
         con.Close()
@@ -111,34 +112,71 @@ Public Class BProducto
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        gendetalle(ent)
+    End Sub
 
-        Dim row As DataRow
+    Public Sub gendetalle(ban As Boolean)
+        If ban = True Then
 
-        row = Entrada.dtable.NewRow
+            Dim row As DataRow
 
-        row(Entrada.dcolum1) = codprotxt.Text
-        row(Entrada.dcolum2) = nomprotxt.Text
-        row(Entrada.dcolum3) = marcaprotxt.Text
-        row(Entrada.dcolum4) = modeloprotxt.Text
-        row(Entrada.dcolum5) = puprotxt.Text
-        row(Entrada.dcolum6) = canttxt.Text
-        row(Entrada.dcolum7) = totaltxt.Text
+            row = Entrada.dtable.NewRow
 
-        Entrada.dtable.Rows.Add(row)
-        Entrada.dtable.AcceptChanges()
-        Entrada.refrescardetalle()
+            row(Entrada.dcolum1) = codprotxt.Text
+            row(Entrada.dcolum2) = nomprotxt.Text
+            row(Entrada.dcolum3) = marcaprotxt.Text
+            row(Entrada.dcolum4) = modeloprotxt.Text
+            row(Entrada.dcolum5) = puprotxt.Text
+            row(Entrada.dcolum6) = canttxt.Text
+            row(Entrada.dcolum7) = totaltxt.Text
 
-        subtotal = subtotal + CDbl(totaltxt.Text)
+            Entrada.dtable.Rows.Add(row)
+            Entrada.dtable.AcceptChanges()
+            Entrada.refrescardetalle()
 
-        Entrada.actualizarcostos(subtotal)
+            subtotal = subtotal + CDbl(totaltxt.Text)
 
-        If MessageBox.Show("¿Desea Añadir mas Productos?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
-            Me.Hide()
+            Entrada.actualizarcostos(subtotal)
+
+            If MessageBox.Show("¿Desea Añadir mas Productos?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                Me.Hide()
+            Else
+                MostrarProducto("")
+                filtxt.ForeColor = Color.Gray
+                filtxt.Text = "Buscar por Nombre de Producto"
+            End If
         Else
-            MostrarProducto("")
+
+            Dim row As DataRow
+
+            row = Salida.dtable.NewRow
+
+            row(Salida.dcolum1) = codprotxt.Text
+            row(Salida.dcolum2) = nomprotxt.Text
+            row(Salida.dcolum3) = marcaprotxt.Text
+            row(Salida.dcolum4) = modeloprotxt.Text
+            row(Salida.dcolum5) = puprotxt.Text
+            row(Salida.dcolum6) = canttxt.Text
+            row(Salida.dcolum7) = totaltxt.Text
+
+            Salida.dtable.Rows.Add(row)
+            Salida.dtable.AcceptChanges()
+            Salida.refrescardetalle()
+
+            subtotal = subtotal + CDbl(totaltxt.Text)
+
+            Salida.actualizarcostos(subtotal)
+
+            If MessageBox.Show("¿Desea Añadir mas Productos?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                Me.Hide()
+            Else
+                MostrarProducto("")
+                filtxt.ForeColor = Color.Gray
+                filtxt.Text = "Buscar por Nombre de Producto"
+            End If
+
+
         End If
-
-
     End Sub
 
     Private Sub filtxt_GotFocus(sender As Object, e As EventArgs) Handles filtxt.GotFocus

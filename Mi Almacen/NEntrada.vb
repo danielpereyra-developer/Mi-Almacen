@@ -70,4 +70,8 @@ Public Class NEntrada
         Me.Hide()
 
     End Sub
+
+    Private Sub cancbtn_Click(sender As Object, e As EventArgs) Handles cancbtn.Click
+        Me.Close()
+    End Sub
 End Class

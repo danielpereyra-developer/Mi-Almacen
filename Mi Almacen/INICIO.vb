@@ -221,6 +221,7 @@ Public Class INICIO
 
     Private Sub IconButton11_Click(sender As Object, e As EventArgs) Handles IconButton11.Click
         activosubbtn(sender, Color.FromArgb(102, 178, 255))
+        NSalida.Show()
     End Sub
 
     Private Sub IconButton10_Click(sender As Object, e As EventArgs) Handles IconButton10.Click

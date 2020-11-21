@@ -28,11 +28,11 @@ Partial Class NEntrada
         Me.ingentbtn = New System.Windows.Forms.Button()
         Me.cancbtn = New System.Windows.Forms.Button()
         Me.provcb = New System.Windows.Forms.ComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.provtxt = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -83,16 +83,6 @@ Partial Class NEntrada
         Me.provcb.Size = New System.Drawing.Size(272, 21)
         Me.provcb.TabIndex = 7
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Mi_Almacen.My.Resources.Resources._009_checklist
-        Me.PictureBox1.Location = New System.Drawing.Point(74, 29)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(170, 157)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -128,6 +118,16 @@ Partial Class NEntrada
         Me.provtxt.Size = New System.Drawing.Size(56, 13)
         Me.provtxt.TabIndex = 12
         Me.provtxt.Text = "Proveedor"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Mi_Almacen.My.Resources.Resources._009_checklist
+        Me.PictureBox1.Location = New System.Drawing.Point(74, 29)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(170, 157)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'NEntrada
         '

@@ -169,6 +169,12 @@
     <Compile Include="NEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NSalida.Designer.vb">
+      <DependentUpon>NSalida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NSalida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Producto.Designer.vb">
       <DependentUpon>Producto.vb</DependentUpon>
     </Compile>
@@ -182,6 +188,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes.vb" />
+    <Compile Include="Salida.Designer.vb">
+      <DependentUpon>Salida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Salida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SUBCATEGORIA.Designer.vb">
       <DependentUpon>SUBCATEGORIA.vb</DependentUpon>
     </Compile>
@@ -226,11 +238,17 @@
     <EmbeddedResource Include="NEntrada.resx">
       <DependentUpon>NEntrada.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NSalida.resx">
+      <DependentUpon>NSalida.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto.resx">
       <DependentUpon>Producto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salida.resx">
+      <DependentUpon>Salida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SUBCATEGORIA.resx">
       <DependentUpon>SUBCATEGORIA.vb</DependentUpon>
