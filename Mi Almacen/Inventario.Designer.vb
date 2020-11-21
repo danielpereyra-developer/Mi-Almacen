@@ -43,63 +43,76 @@ Partial Class Inventario
         Me.cmprtxt = New System.Windows.Forms.TextBox()
         Me.puprtxt = New System.Windows.Forms.TextBox()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.imgprpb, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'nomptxt
         '
         Me.nomptxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nomptxt.Location = New System.Drawing.Point(94, 90)
+        Me.nomptxt.Location = New System.Drawing.Point(49, 90)
         Me.nomptxt.Name = "nomptxt"
-        Me.nomptxt.Size = New System.Drawing.Size(162, 20)
+        Me.nomptxt.Size = New System.Drawing.Size(284, 20)
         Me.nomptxt.TabIndex = 0
         '
         'Button1
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button1.Location = New System.Drawing.Point(289, 88)
+        Me.Button1.Location = New System.Drawing.Point(339, 87)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(144, 23)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "BUSCAR PRODUCTO"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button2.Location = New System.Drawing.Point(82, 132)
+        Me.Button2.Location = New System.Drawing.Point(49, 132)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(95, 23)
+        Me.Button2.Size = New System.Drawing.Size(128, 23)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "EXPORTAR PDF"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
         Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button3.Location = New System.Drawing.Point(209, 132)
+        Me.Button3.Location = New System.Drawing.Point(184, 132)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(72, 23)
+        Me.Button3.Size = New System.Drawing.Size(149, 23)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Button3"
+        Me.Button3.Text = "PROXIMOS AGOTARSE"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
         Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button4.Location = New System.Drawing.Point(314, 132)
+        Me.Button4.Location = New System.Drawing.Point(339, 132)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(78, 23)
+        Me.Button4.Size = New System.Drawing.Size(144, 23)
         Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Button4"
+        Me.Button4.Text = "MOSTAR PRODUCTOS"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'imgprpb
         '
-        Me.imgprpb.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.imgprpb.Location = New System.Drawing.Point(37, 215)
+        Me.imgprpb.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.imgprpb.Location = New System.Drawing.Point(0, 0)
         Me.imgprpb.Name = "imgprpb"
-        Me.imgprpb.Size = New System.Drawing.Size(219, 211)
+        Me.imgprpb.Padding = New System.Windows.Forms.Padding(10)
+        Me.imgprpb.Size = New System.Drawing.Size(219, 220)
         Me.imgprpb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgprpb.TabIndex = 5
         Me.imgprpb.TabStop = False
@@ -107,7 +120,7 @@ Partial Class Inventario
         'codprtxt
         '
         Me.codprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.codprtxt.Location = New System.Drawing.Point(279, 278)
+        Me.codprtxt.Location = New System.Drawing.Point(279, 229)
         Me.codprtxt.Name = "codprtxt"
         Me.codprtxt.Size = New System.Drawing.Size(100, 20)
         Me.codprtxt.TabIndex = 6
@@ -115,41 +128,41 @@ Partial Class Inventario
         'nomprtxt
         '
         Me.nomprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nomprtxt.Location = New System.Drawing.Point(444, 278)
+        Me.nomprtxt.Location = New System.Drawing.Point(399, 229)
         Me.nomprtxt.Name = "nomprtxt"
-        Me.nomprtxt.Size = New System.Drawing.Size(100, 20)
+        Me.nomprtxt.Size = New System.Drawing.Size(145, 20)
         Me.nomprtxt.TabIndex = 8
         '
         'marcaprtxt
         '
         Me.marcaprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.marcaprtxt.Location = New System.Drawing.Point(279, 318)
+        Me.marcaprtxt.Location = New System.Drawing.Point(279, 287)
         Me.marcaprtxt.Name = "marcaprtxt"
-        Me.marcaprtxt.Size = New System.Drawing.Size(100, 20)
+        Me.marcaprtxt.Size = New System.Drawing.Size(115, 20)
         Me.marcaprtxt.TabIndex = 9
         '
         'modeloprtxt
         '
         Me.modeloprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.modeloprtxt.Location = New System.Drawing.Point(444, 318)
+        Me.modeloprtxt.Location = New System.Drawing.Point(413, 287)
         Me.modeloprtxt.Name = "modeloprtxt"
-        Me.modeloprtxt.Size = New System.Drawing.Size(100, 20)
+        Me.modeloprtxt.Size = New System.Drawing.Size(131, 20)
         Me.modeloprtxt.TabIndex = 10
         '
         'catprtxt
         '
         Me.catprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.catprtxt.Location = New System.Drawing.Point(279, 353)
+        Me.catprtxt.Location = New System.Drawing.Point(279, 345)
         Me.catprtxt.Name = "catprtxt"
-        Me.catprtxt.Size = New System.Drawing.Size(100, 20)
+        Me.catprtxt.Size = New System.Drawing.Size(115, 20)
         Me.catprtxt.TabIndex = 11
         '
         'scatprtxt
         '
         Me.scatprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.scatprtxt.Location = New System.Drawing.Point(444, 353)
+        Me.scatprtxt.Location = New System.Drawing.Point(413, 345)
         Me.scatprtxt.Name = "scatprtxt"
-        Me.scatprtxt.Size = New System.Drawing.Size(100, 20)
+        Me.scatprtxt.Size = New System.Drawing.Size(131, 20)
         Me.scatprtxt.TabIndex = 12
         '
         'productoslb
@@ -158,7 +171,7 @@ Partial Class Inventario
         Me.productoslb.FormattingEnabled = True
         Me.productoslb.Location = New System.Drawing.Point(588, 132)
         Me.productoslb.Name = "productoslb"
-        Me.productoslb.Size = New System.Drawing.Size(176, 264)
+        Me.productoslb.Size = New System.Drawing.Size(176, 290)
         Me.productoslb.TabIndex = 13
         '
         'Button5
@@ -194,7 +207,7 @@ Partial Class Inventario
         'ubicprtxt
         '
         Me.ubicprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.ubicprtxt.Location = New System.Drawing.Point(279, 395)
+        Me.ubicprtxt.Location = New System.Drawing.Point(279, 404)
         Me.ubicprtxt.Name = "ubicprtxt"
         Me.ubicprtxt.Size = New System.Drawing.Size(265, 20)
         Me.ubicprtxt.TabIndex = 17
@@ -202,7 +215,7 @@ Partial Class Inventario
         'exprtxt
         '
         Me.exprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.exprtxt.Location = New System.Drawing.Point(383, 462)
+        Me.exprtxt.Location = New System.Drawing.Point(334, 460)
         Me.exprtxt.Name = "exprtxt"
         Me.exprtxt.Size = New System.Drawing.Size(100, 20)
         Me.exprtxt.TabIndex = 19
@@ -210,7 +223,7 @@ Partial Class Inventario
         'cmprtxt
         '
         Me.cmprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cmprtxt.Location = New System.Drawing.Point(233, 462)
+        Me.cmprtxt.Location = New System.Drawing.Point(156, 460)
         Me.cmprtxt.Name = "cmprtxt"
         Me.cmprtxt.Size = New System.Drawing.Size(100, 20)
         Me.cmprtxt.TabIndex = 18
@@ -218,7 +231,7 @@ Partial Class Inventario
         'puprtxt
         '
         Me.puprtxt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.puprtxt.Location = New System.Drawing.Point(529, 462)
+        Me.puprtxt.Location = New System.Drawing.Point(507, 460)
         Me.puprtxt.Name = "puprtxt"
         Me.puprtxt.Size = New System.Drawing.Size(100, 20)
         Me.puprtxt.TabIndex = 20
@@ -227,11 +240,121 @@ Partial Class Inventario
         '
         Me.sfd.Filter = "PDF|*.pdf"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(276, 204)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.TabIndex = 21
+        Me.Label1.Text = "Codigo"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(396, 204)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(50, 13)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "Producto"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(276, 261)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(37, 13)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Marca"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(410, 261)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(42, 13)
+        Me.Label4.TabIndex = 24
+        Me.Label4.Text = "Modelo"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(276, 319)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.TabIndex = 25
+        Me.Label5.Text = "Categoria"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(412, 319)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(71, 13)
+        Me.Label6.TabIndex = 26
+        Me.Label6.Text = "SubCategoria"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(276, 383)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(55, 13)
+        Me.Label7.TabIndex = 27
+        Me.Label7.Text = "Ubicacion"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(82, 463)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(68, 13)
+        Me.Label8.TabIndex = 28
+        Me.Label8.Text = "Cant. Minima"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(268, 463)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(60, 13)
+        Me.Label9.TabIndex = 29
+        Me.Label9.Text = "Existencias"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(445, 463)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(56, 13)
+        Me.Label10.TabIndex = 30
+        Me.Label10.Text = "P. Unitario"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Red
+        Me.Panel1.Controls.Add(Me.imgprpb)
+        Me.Panel1.Location = New System.Drawing.Point(37, 204)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(219, 220)
+        Me.Panel1.TabIndex = 31
+        '
         'Inventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(818, 527)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.puprtxt)
         Me.Controls.Add(Me.exprtxt)
         Me.Controls.Add(Me.cmprtxt)
@@ -246,7 +369,6 @@ Partial Class Inventario
         Me.Controls.Add(Me.marcaprtxt)
         Me.Controls.Add(Me.nomprtxt)
         Me.Controls.Add(Me.codprtxt)
-        Me.Controls.Add(Me.imgprpb)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -256,6 +378,7 @@ Partial Class Inventario
         Me.Name = "Inventario"
         Me.Text = "Inventario"
         CType(Me.imgprpb, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -282,4 +405,15 @@ Partial Class Inventario
     Friend WithEvents cmprtxt As TextBox
     Friend WithEvents puprtxt As TextBox
     Friend WithEvents sfd As SaveFileDialog
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Panel1 As Panel
 End Class

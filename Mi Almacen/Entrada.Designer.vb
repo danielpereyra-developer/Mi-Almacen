@@ -172,6 +172,7 @@ Partial Class Entrada
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(519, 367)
         Me.Label1.Name = "Label1"
@@ -181,6 +182,7 @@ Partial Class Entrada
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(556, 393)
         Me.Label2.Name = "Label2"
@@ -190,6 +192,7 @@ Partial Class Entrada
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(539, 419)
         Me.Label3.Name = "Label3"
@@ -199,6 +202,7 @@ Partial Class Entrada
         '
         'Label4
         '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(607, 31)
         Me.Label4.Name = "Label4"
@@ -208,6 +212,7 @@ Partial Class Entrada
         '
         'Label5
         '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(607, 58)
         Me.Label5.Name = "Label5"
@@ -217,6 +222,7 @@ Partial Class Entrada
         '
         'Label6
         '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(436, 97)
         Me.Label6.Name = "Label6"
@@ -226,6 +232,7 @@ Partial Class Entrada
         '
         'Label7
         '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(371, 123)
         Me.Label7.Name = "Label7"

@@ -10,6 +10,8 @@ Public Class BProducto
             prodlb.SelectedIndex = 0
         End If
 
+        filtxt.ForeColor = Color.Gray
+        filtxt.Text = "Buscar por Nombre de Producto"
     End Sub
     Public Sub MostrarProducto(ByVal filtro As String)
         Dim sql As String
@@ -98,7 +100,11 @@ Public Class BProducto
     End Sub
 
     Private Sub filtxt_TextChanged(sender As Object, e As EventArgs) Handles filtxt.TextChanged
-        MostrarProducto(filtxt.Text)
+        If filtxt.Text <> "Buscar por Nombre de Producto" Then
+            MostrarProducto(filtxt.Text)
+        Else
+            MostrarProducto("")
+        End If
         If prodlb.Items.Count > 0 Then
             prodlb.SelectedIndex = 0
         End If
@@ -126,27 +132,26 @@ Public Class BProducto
 
         Entrada.actualizarcostos(subtotal)
 
-        Me.Hide()
+        If MessageBox.Show("¿Desea Añadir mas Productos?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+            Me.Hide()
+        Else
+            MostrarProducto("")
+        End If
 
-        'Dim sqlins As String = "INSERT INTO DETALLE_ENTRADA VALUES('" + Entrada.identxt.Text + "','" + codprotxt.Text + "','" + canttxt.Text + "','" + totaltxt.Text + "')"
-        'Dim cmd As New SqlCommand(sqlins, con)
 
-        'con.Open()
-        'cmd.ExecuteNonQuery()
-        'con.Close()
+    End Sub
 
-        'Dim sql As String = "SELECT DETALLE_ENTRADA.ID_PRODUCTO,PRODUCTOS.NOM_PRODUCTO, PRODUCTOS.MARCA_PRODUCTO, PRODUCTOS.MODELO_PRODUCTO, PRODUCTOS.PU_PRODUCTO,DETALLE_ENTRADA.CANTIDAD,DETALLE_ENTRADA.TOTAL FROM DETALLE_ENTRADA
-        'INNER Join PRODUCTOS ON DETALLE_ENTRADA.ID_PRODUCTO=PRODUCTOS.ID_PRODUCTO WHERE DETALLE_ENTRADA.ID_ENTRADA='" + Entrada.identxt.Text + "'"
-        'Dim cmd2 As New SqlCommand(sql, con)
+    Private Sub filtxt_GotFocus(sender As Object, e As EventArgs) Handles filtxt.GotFocus
+        If filtxt.Text = "Buscar por Nombre de Producto" Then
+            filtxt.ForeColor = Color.Black
+            filtxt.Text = ""
+        End If
+    End Sub
 
-        'Try
-        'Dim da As New SqlDataAdapter(cmd2)
-        'Dim dt As New DataTable
-        'da.Fill(dt)
-
-        'Entrada.detalledgv.DataSource = dt
-        'Catch ex As Exception
-        'MsgBox(ex.Message)
-        'End Try
+    Private Sub filtxt_LostFocus(sender As Object, e As EventArgs) Handles filtxt.LostFocus
+        If filtxt.Text = Nothing Then
+            filtxt.ForeColor = Color.Gray
+            filtxt.Text = "Buscar por Nombre de Producto"
+        End If
     End Sub
 End Class
