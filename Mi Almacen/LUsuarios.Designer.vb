@@ -23,6 +23,7 @@ Partial Class LUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.imguspb = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -40,21 +41,31 @@ Partial Class LUsuarios
         Me.nomtxt = New System.Windows.Forms.TextBox()
         Me.cargtxt = New System.Windows.Forms.TextBox()
         Me.filtxt = New System.Windows.Forms.TextBox()
-        Me.imgpropb = New System.Windows.Forms.PictureBox()
         Me.exppdfbtn = New FontAwesome.Sharp.IconButton()
         Me.Panel1.SuspendLayout()
-        CType(Me.imgpropb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imguspb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BackColor = System.Drawing.Color.Red
-        Me.Panel1.Controls.Add(Me.imgpropb)
+        Me.Panel1.Controls.Add(Me.imguspb)
         Me.Panel1.Location = New System.Drawing.Point(289, 98)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(318, 290)
         Me.Panel1.TabIndex = 42
+        '
+        'imguspb
+        '
+        Me.imguspb.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.imguspb.Location = New System.Drawing.Point(0, 0)
+        Me.imguspb.Name = "imguspb"
+        Me.imguspb.Padding = New System.Windows.Forms.Padding(10)
+        Me.imguspb.Size = New System.Drawing.Size(318, 290)
+        Me.imguspb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imguspb.TabIndex = 9
+        Me.imguspb.TabStop = False
         '
         'Label9
         '
@@ -209,17 +220,6 @@ Partial Class LUsuarios
         Me.filtxt.Size = New System.Drawing.Size(504, 20)
         Me.filtxt.TabIndex = 22
         '
-        'imgpropb
-        '
-        Me.imgpropb.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.imgpropb.Location = New System.Drawing.Point(0, 0)
-        Me.imgpropb.Name = "imgpropb"
-        Me.imgpropb.Padding = New System.Windows.Forms.Padding(10)
-        Me.imgpropb.Size = New System.Drawing.Size(318, 290)
-        Me.imgpropb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imgpropb.TabIndex = 9
-        Me.imgpropb.TabStop = False
-        '
         'exppdfbtn
         '
         Me.exppdfbtn.IconChar = FontAwesome.Sharp.IconChar.None
@@ -260,14 +260,14 @@ Partial Class LUsuarios
         Me.Name = "LUsuarios"
         Me.Text = "LUsuarios"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.imgpropb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imguspb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents imgpropb As PictureBox
+    Friend WithEvents imguspb As PictureBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label

@@ -26,11 +26,16 @@ Partial Class SUBCATEGORIA
         Me.nomscattxt = New System.Windows.Forms.TextBox()
         Me.codscattxt = New System.Windows.Forms.TextBox()
         Me.catrcb = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(520, 286)
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button1.Location = New System.Drawing.Point(187, 222)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 5
@@ -39,31 +44,77 @@ Partial Class SUBCATEGORIA
         '
         'nomscattxt
         '
-        Me.nomscattxt.Location = New System.Drawing.Point(209, 227)
+        Me.nomscattxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.nomscattxt.Location = New System.Drawing.Point(203, 165)
         Me.nomscattxt.Name = "nomscattxt"
-        Me.nomscattxt.Size = New System.Drawing.Size(376, 20)
+        Me.nomscattxt.Size = New System.Drawing.Size(190, 20)
         Me.nomscattxt.TabIndex = 4
         '
         'codscattxt
         '
-        Me.codscattxt.Location = New System.Drawing.Point(209, 141)
+        Me.codscattxt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.codscattxt.Location = New System.Drawing.Point(161, 79)
         Me.codscattxt.Name = "codscattxt"
         Me.codscattxt.Size = New System.Drawing.Size(100, 20)
         Me.codscattxt.TabIndex = 3
         '
         'catrcb
         '
+        Me.catrcb.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.catrcb.FormattingEnabled = True
-        Me.catrcb.Location = New System.Drawing.Point(209, 181)
+        Me.catrcb.Location = New System.Drawing.Point(161, 119)
         Me.catrcb.Name = "catrcb"
         Me.catrcb.Size = New System.Drawing.Size(198, 21)
         Me.catrcb.TabIndex = 6
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(72, 82)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(18, 13)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "ID"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(72, 127)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(52, 13)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Categoria"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(72, 168)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(125, 13)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Nombre de Subcategoria"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(61, 42)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(150, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "* Ingrese Nueva Subcategoria"
         '
         'SUBCATEGORIA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(471, 298)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.catrcb)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.nomscattxt)
@@ -79,4 +130,8 @@ Partial Class SUBCATEGORIA
     Friend WithEvents nomscattxt As TextBox
     Friend WithEvents codscattxt As TextBox
     Friend WithEvents catrcb As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

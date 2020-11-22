@@ -93,10 +93,14 @@ Public Class BProducto
     End Sub
 
     Private Sub canttxt_TextChanged(sender As Object, e As EventArgs) Handles canttxt.TextChanged
-        If canttxt.Text <> "" And puprotxt.Text <> "" Then
-            If CInt(canttxt.Text) >= CInt(exprotxt.Text) Then
-                MsgBox("La cantidad no puede igualar o exceder al numero de existencias")
-                canttxt.Text = ""
+        If canttxt.Text <> "" And puprotxt.Text <> "" Or canttxt.Text = "0" Then
+            If ent = False Then
+                If CInt(canttxt.Text) >= CInt(exprotxt.Text) Then
+                    MsgBox("La cantidad no puede igualar o exceder al numero de existencias")
+                    canttxt.Text = ""
+                Else
+                    totaltxt.Text = Convert.ToString(CDbl(puprotxt.Text) * CDbl(canttxt.Text))
+                End If
             Else
                 totaltxt.Text = Convert.ToString(CDbl(puprotxt.Text) * CDbl(canttxt.Text))
             End If
@@ -182,6 +186,9 @@ Public Class BProducto
                 MostrarProducto("")
                 filtxt.ForeColor = Color.Gray
                 filtxt.Text = "Buscar por Nombre de Producto"
+                If prodlb.Items.Count > 0 Then
+                    prodlb.SelectedIndex = 0
+                End If
             End If
 
 
