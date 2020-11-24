@@ -84,7 +84,8 @@ Public Class Producto
         End If
 
         Inventario.MostrarProductos()
-        Me.Hide()
+        INICIO.AbrirHijo(Inventario)
+        Me.Close()
     End Sub
 
     Private Sub catpcb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles catpcb.SelectedIndexChanged

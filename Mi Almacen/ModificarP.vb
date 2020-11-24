@@ -49,7 +49,9 @@ Public Class ModificarP
             End Try
             con.Close()
         End If
-        Me.Hide()
+        Inventario.MostrarProductos()
+        INICIO.AbrirHijo(Inventario)
+        Me.Close()
     End Sub
 
     Public Sub LLenarCombosCat()

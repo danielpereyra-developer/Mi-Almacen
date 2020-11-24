@@ -35,9 +35,6 @@ Partial Class Inventario
         Me.catprtxt = New System.Windows.Forms.TextBox()
         Me.scatprtxt = New System.Windows.Forms.TextBox()
         Me.productoslb = New System.Windows.Forms.ListBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.ubicprtxt = New System.Windows.Forms.TextBox()
         Me.exprtxt = New System.Windows.Forms.TextBox()
         Me.cmprtxt = New System.Windows.Forms.TextBox()
@@ -54,6 +51,9 @@ Partial Class Inventario
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.addbtn = New FontAwesome.Sharp.IconButton()
+        Me.editbtn = New FontAwesome.Sharp.IconButton()
+        Me.delbtn = New FontAwesome.Sharp.IconButton()
         CType(Me.imgprpb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -173,36 +173,6 @@ Partial Class Inventario
         Me.productoslb.Name = "productoslb"
         Me.productoslb.Size = New System.Drawing.Size(176, 290)
         Me.productoslb.TabIndex = 13
-        '
-        'Button5
-        '
-        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button5.Location = New System.Drawing.Point(588, 66)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(51, 45)
-        Me.Button5.TabIndex = 14
-        Me.Button5.Text = "Agregar"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button6.Location = New System.Drawing.Point(645, 66)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(56, 45)
-        Me.Button6.TabIndex = 15
-        Me.Button6.Text = "Modificar"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button7.Location = New System.Drawing.Point(707, 66)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(56, 45)
-        Me.Button7.TabIndex = 16
-        Me.Button7.Text = "Borrar"
-        Me.Button7.UseVisualStyleBackColor = True
         '
         'ubicprtxt
         '
@@ -350,11 +320,68 @@ Partial Class Inventario
         Me.Panel1.Size = New System.Drawing.Size(219, 220)
         Me.Panel1.TabIndex = 31
         '
+        'addbtn
+        '
+        Me.addbtn.BackColor = System.Drawing.Color.YellowGreen
+        Me.addbtn.FlatAppearance.BorderSize = 0
+        Me.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.addbtn.IconChar = FontAwesome.Sharp.IconChar.Plus
+        Me.addbtn.IconColor = System.Drawing.Color.Blue
+        Me.addbtn.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.addbtn.IconSize = 40
+        Me.addbtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.addbtn.Location = New System.Drawing.Point(588, 76)
+        Me.addbtn.Name = "addbtn"
+        Me.addbtn.Size = New System.Drawing.Size(50, 50)
+        Me.addbtn.TabIndex = 32
+        Me.addbtn.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.addbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.addbtn.UseVisualStyleBackColor = False
+        '
+        'editbtn
+        '
+        Me.editbtn.BackColor = System.Drawing.Color.DodgerBlue
+        Me.editbtn.FlatAppearance.BorderSize = 0
+        Me.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.editbtn.IconChar = FontAwesome.Sharp.IconChar.Edit
+        Me.editbtn.IconColor = System.Drawing.Color.ForestGreen
+        Me.editbtn.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.editbtn.IconSize = 40
+        Me.editbtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.editbtn.Location = New System.Drawing.Point(646, 76)
+        Me.editbtn.Name = "editbtn"
+        Me.editbtn.Size = New System.Drawing.Size(50, 50)
+        Me.editbtn.TabIndex = 33
+        Me.editbtn.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.editbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.editbtn.UseVisualStyleBackColor = False
+        '
+        'delbtn
+        '
+        Me.delbtn.BackColor = System.Drawing.Color.Firebrick
+        Me.delbtn.FlatAppearance.BorderSize = 0
+        Me.delbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.delbtn.IconChar = FontAwesome.Sharp.IconChar.Times
+        Me.delbtn.IconColor = System.Drawing.Color.Black
+        Me.delbtn.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.delbtn.IconSize = 40
+        Me.delbtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.delbtn.Location = New System.Drawing.Point(702, 76)
+        Me.delbtn.Name = "delbtn"
+        Me.delbtn.Size = New System.Drawing.Size(50, 50)
+        Me.delbtn.TabIndex = 34
+        Me.delbtn.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.delbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.delbtn.UseVisualStyleBackColor = False
+        '
         'Inventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(818, 527)
+        Me.Controls.Add(Me.delbtn)
+        Me.Controls.Add(Me.editbtn)
+        Me.Controls.Add(Me.addbtn)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -370,9 +397,6 @@ Partial Class Inventario
         Me.Controls.Add(Me.exprtxt)
         Me.Controls.Add(Me.cmprtxt)
         Me.Controls.Add(Me.ubicprtxt)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.productoslb)
         Me.Controls.Add(Me.scatprtxt)
         Me.Controls.Add(Me.catprtxt)
@@ -408,9 +432,6 @@ Partial Class Inventario
     Friend WithEvents catprtxt As TextBox
     Friend WithEvents scatprtxt As TextBox
     Friend WithEvents productoslb As ListBox
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
     Friend WithEvents ubicprtxt As TextBox
     Friend WithEvents exprtxt As TextBox
     Friend WithEvents cmprtxt As TextBox
@@ -427,4 +448,7 @@ Partial Class Inventario
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents addbtn As FontAwesome.Sharp.IconButton
+    Friend WithEvents editbtn As FontAwesome.Sharp.IconButton
+    Friend WithEvents delbtn As FontAwesome.Sharp.IconButton
 End Class

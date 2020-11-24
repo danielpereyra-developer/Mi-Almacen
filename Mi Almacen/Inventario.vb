@@ -11,9 +11,6 @@ Public Class Inventario
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        INICIO.AbrirHijo(New Producto)
-    End Sub
     Public Sub MostrarProductos()
         con.Open()
         Dim producto As String
@@ -178,41 +175,6 @@ Public Class Inventario
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        If productoslb.SelectedIndex = -1 Then
-            MsgBox("Seleccione la nota que desea modificar de la lista")
-            Exit Sub
-        ElseIf productoslb.SelectedIndex > -1 Then
-            ModificarP.codtxt.Text = codprtxt.Text
-            ModificarP.nomptxt.Text = nomprtxt.Text
-            ModificarP.marcaptxt.Text = marcaprtxt.Text
-            ModificarP.modeloptxt.Text = modeloprtxt.Text
-            ModificarP.ubiccb.Text = ubicprtxt.Text
-            ModificarP.cantmtxt.Text = cmprtxt.Text
-            ModificarP.exptxt.Text = exprtxt.Text
-            ModificarP.puptxt.Text = puprtxt.Text
-            ModificarP.imagenpb.Image = imgprpb.Image
-            ModificarP.Show()
-        End If
-    End Sub
-
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        If MessageBox.Show("¿Desea Eliminar este Producto?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            Dim sqldel As String = "DELETE FROM PRODUCTOS WHERE PRODUCTOS.NOM_PRODUCTO='" + productoslb.SelectedItem.ToString + "'"
-            Dim cmd As New SqlCommand(sqldel, con)
-            Try
-                con.Open()
-                cmd.ExecuteNonQuery()
-                MsgBox("El Producto se ha Eliminado con Exito")
-                MostrarProductos()
-                productoslb.SelectedIndex = 0
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            con.Close()
-        End If
-        MostrarProductos()
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         pdfInventario(sfd)
@@ -231,5 +193,45 @@ Public Class Inventario
             nomptxt.ForeColor = Color.Gray
             nomptxt.Text = "Buscar por nombre de producto"
         End If
+    End Sub
+
+    Private Sub addbtn_Click(sender As Object, e As EventArgs) Handles addbtn.Click
+        INICIO.AbrirHijo(New Producto)
+    End Sub
+
+    Private Sub editbtn_Click(sender As Object, e As EventArgs) Handles editbtn.Click
+        If productoslb.SelectedIndex = -1 Then
+            MsgBox("Seleccione la nota que desea modificar de la lista")
+            Exit Sub
+        ElseIf productoslb.SelectedIndex > -1 Then
+            ModificarP.codtxt.Text = codprtxt.Text
+            ModificarP.nomptxt.Text = nomprtxt.Text
+            ModificarP.marcaptxt.Text = marcaprtxt.Text
+            ModificarP.modeloptxt.Text = modeloprtxt.Text
+            ModificarP.ubiccb.Text = ubicprtxt.Text
+            ModificarP.cantmtxt.Text = cmprtxt.Text
+            ModificarP.exptxt.Text = exprtxt.Text
+            ModificarP.puptxt.Text = puprtxt.Text
+            ModificarP.imagenpb.Image = imgprpb.Image
+            ModificarP.Show()
+        End If
+    End Sub
+
+    Private Sub delbtn_Click(sender As Object, e As EventArgs) Handles delbtn.Click
+        If MessageBox.Show("¿Desea Eliminar este Producto?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            Dim sqldel As String = "DELETE FROM PRODUCTOS WHERE PRODUCTOS.NOM_PRODUCTO='" + productoslb.SelectedItem.ToString + "'"
+            Dim cmd As New SqlCommand(sqldel, con)
+            Try
+                con.Open()
+                cmd.ExecuteNonQuery()
+                MsgBox("El Producto se ha Eliminado con Exito")
+                MostrarProductos()
+                productoslb.SelectedIndex = 0
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            con.Close()
+        End If
+        MostrarProductos()
     End Sub
 End Class
