@@ -22,6 +22,7 @@ Partial Class LUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LUsuarios))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.imguspb = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -262,6 +263,7 @@ Partial Class LUsuarios
         Me.Controls.Add(Me.nomtxt)
         Me.Controls.Add(Me.cargtxt)
         Me.Controls.Add(Me.filtxt)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "LUsuarios"
         Me.Text = "LUsuarios"

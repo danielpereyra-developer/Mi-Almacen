@@ -22,6 +22,7 @@ Partial Class USUARIOS
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(USUARIOS))
         Me.pnomtxt = New System.Windows.Forms.TextBox()
         Me.apetxt = New System.Windows.Forms.TextBox()
         Me.celtxt = New System.Windows.Forms.TextBox()
@@ -229,6 +230,7 @@ Partial Class USUARIOS
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.imgpb)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "USUARIOS"
         Me.Text = " NUEVO USUARIO"

@@ -22,6 +22,7 @@ Partial Class Entrada
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Entrada))
         Me.logopb = New System.Windows.Forms.PictureBox()
         Me.identxt = New System.Windows.Forms.TextBox()
         Me.fechtxt = New System.Windows.Forms.TextBox()
@@ -269,6 +270,7 @@ Partial Class Entrada
         Me.Controls.Add(Me.fechtxt)
         Me.Controls.Add(Me.identxt)
         Me.Controls.Add(Me.logopb)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "Entrada"
         Me.Text = "NUEVA ENTRADA"

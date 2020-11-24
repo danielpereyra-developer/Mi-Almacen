@@ -22,6 +22,7 @@ Partial Class Producto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Producto))
         Me.codtxt = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.exabtn = New System.Windows.Forms.Button()
@@ -349,6 +350,7 @@ Partial Class Producto
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.codbarpb)
         Me.Controls.Add(Me.codtxt)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "Producto"
         Me.Text = "Producto"

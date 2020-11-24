@@ -22,6 +22,7 @@ Partial Class Salida
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Salida))
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -269,6 +270,7 @@ Partial Class Salida
         Me.Controls.Add(Me.fechtxt)
         Me.Controls.Add(Me.idsaltxt)
         Me.Controls.Add(Me.logopb)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Salida"
         Me.Text = "Salida"
         CType(Me.detalledgv, System.ComponentModel.ISupportInitialize).EndInit()

@@ -22,6 +22,7 @@ Partial Class BProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BProducto))
         Me.filtxt = New System.Windows.Forms.TextBox()
         Me.nomprotxt = New System.Windows.Forms.TextBox()
         Me.codprotxt = New System.Windows.Forms.TextBox()
@@ -277,9 +278,10 @@ Partial Class BProducto
         Me.Controls.Add(Me.codprotxt)
         Me.Controls.Add(Me.nomprotxt)
         Me.Controls.Add(Me.filtxt)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(834, 566)
         Me.Name = "BProducto"
-        Me.Text = "BProducto"
+        Me.Text = "Buscar Producto"
         CType(Me.imgpropb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)

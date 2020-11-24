@@ -22,6 +22,7 @@ Partial Class NSalida
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NSalida))
         Me.cliente = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -154,8 +155,9 @@ Partial Class NSalida
         Me.Controls.Add(Me.ususttxt)
         Me.Controls.Add(Me.fechasaltxt)
         Me.Controls.Add(Me.idsaltxt)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NSalida"
-        Me.Text = "NSalida"
+        Me.Text = "Nueva Salida"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

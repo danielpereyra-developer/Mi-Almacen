@@ -23,6 +23,7 @@ Partial Class INICIO
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(INICIO))
         Me.footerp = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -563,6 +564,7 @@ Partial Class INICIO
         Me.Controls.Add(Me.headerp)
         Me.Controls.Add(Me.menup)
         Me.Controls.Add(Me.footerp)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1100, 700)
         Me.Name = "INICIO"
         Me.Text = "INICIO"

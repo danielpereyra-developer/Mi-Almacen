@@ -22,6 +22,7 @@ Partial Class SUBCATEGORIA
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SUBCATEGORIA))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.nomscattxt = New System.Windows.Forms.TextBox()
         Me.codscattxt = New System.Windows.Forms.TextBox()
@@ -119,6 +120,7 @@ Partial Class SUBCATEGORIA
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.nomscattxt)
         Me.Controls.Add(Me.codscattxt)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SUBCATEGORIA"
         Me.Text = "NUEVA SUBCATEGORIA"
         Me.ResumeLayout(False)
