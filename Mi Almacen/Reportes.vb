@@ -1017,7 +1017,7 @@ Module Reportes
 
         Dim pdfcell As PdfPCell = Nothing
 
-        Dim dt As DataTable = getDataTableSalida()
+        Dim dt As DataTable = getDataTableUser()
 
         For i = 0 To dt.Rows.Count - 1
             Dim imgus As itextsharp.text.Image
@@ -1025,43 +1025,43 @@ Module Reportes
             imgus.ScaleToFit(50.0F, 50.0F)
             imgus.SpacingBefore = 20.0F
             imgus.SpacingAfter = 10.0F
-            imgus.SetAbsolutePosition(50, 400 - (45 * i))
+            imgus.SetAbsolutePosition(50, 600 - (70 * i))
             pdfdoc.Add(imgus)
 
             tablaD.AddCell(Cvacio)
             col2 = New PdfPCell(New Phrase("Nombre de Usuario: " + dt.Rows(i)(0).ToString, FontB8))
             col2.Border = 0
-            tabla1.AddCell(col2)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
+            tablaD.AddCell(col2)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
 
             col2 = New PdfPCell(New Phrase("Cargo: " + dt.Rows(i)(1).ToString, FontB))
             col2.Border = 0
-            tabla1.AddCell(col2)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
+            tablaD.AddCell(col2)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
 
             col2 = New PdfPCell(New Phrase(dt.Rows(i)(2).ToString, FontB))
             col2.Border = 0
-            tabla1.AddCell(col2)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
+            tablaD.AddCell(col2)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
 
             col2 = New PdfPCell(New Phrase(dt.Rows(i)(3).ToString, FontB))
             col2.Border = 0
-            tabla1.AddCell(col2)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
+            tablaD.AddCell(col2)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
 
             col2 = New PdfPCell(New Phrase("Telefono: " + dt.Rows(i)(4).ToString, FontB))
             col2.Border = 0
-            tabla1.AddCell(col2)
-            tabla1.AddCell(Cvacio)
-            tabla1.AddCell(Cvacio)
+            tablaD.AddCell(col2)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
 
         Next
 
