@@ -8,6 +8,7 @@ Public Class LUsuarios
     End Sub
 
     Public Sub MostrarUsuarios(ByVal filtro As String)
+        userlb.SelectedIndex = -1
         con.Open()
         Dim usuario As String
         Dim sql As String
@@ -45,11 +46,12 @@ Public Class LUsuarios
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        userlb.SelectedIndex = 0
     End Sub
 
     Private Sub userlb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles userlb.SelectedIndexChanged
         If userlb.SelectedIndex = -1 Then
-            MsgBox("Seleccione el usuario que desea mostrar de la lista")
+            'MsgBox("Seleccione el usuario que desea mostrar de la lista")
             Exit Sub
         ElseIf userlb.SelectedIndex > -1 Then
 

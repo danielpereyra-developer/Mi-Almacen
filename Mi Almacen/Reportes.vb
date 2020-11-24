@@ -1025,7 +1025,7 @@ Module Reportes
             imgus.ScaleToFit(50.0F, 50.0F)
             imgus.SpacingBefore = 20.0F
             imgus.SpacingAfter = 10.0F
-            imgus.SetAbsolutePosition(50, 600 - (70 * i))
+            imgus.SetAbsolutePosition(50, 600 - (95 * i))
             pdfdoc.Add(imgus)
 
             tablaD.AddCell(Cvacio)
@@ -1060,6 +1060,11 @@ Module Reportes
             col2 = New PdfPCell(New Phrase("Telefono: " + dt.Rows(i)(4).ToString, FontB))
             col2.Border = 0
             tablaD.AddCell(col2)
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
+
+            tablaD.AddCell(Cvacio)
+            tablaD.AddCell(Cvacio)
             tablaD.AddCell(Cvacio)
             tablaD.AddCell(Cvacio)
 
