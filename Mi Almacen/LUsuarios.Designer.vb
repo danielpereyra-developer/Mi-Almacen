@@ -222,6 +222,7 @@ Partial Class LUsuarios
         '
         'exppdfbtn
         '
+        Me.exppdfbtn.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.exppdfbtn.IconChar = FontAwesome.Sharp.IconChar.None
         Me.exppdfbtn.IconColor = System.Drawing.Color.Black
         Me.exppdfbtn.IconFont = FontAwesome.Sharp.IconFont.[Auto]

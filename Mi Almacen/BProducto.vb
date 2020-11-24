@@ -13,6 +13,7 @@ Public Class BProducto
 
         filtxt.ForeColor = Color.Gray
         filtxt.Text = "Buscar por Nombre de Producto"
+        canttxt.Select()
     End Sub
     Public Sub MostrarProducto(ByVal filtro As String)
         Dim sql As String

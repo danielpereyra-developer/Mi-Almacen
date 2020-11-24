@@ -172,9 +172,6 @@ Public Class INICIO
         AbrirHijo(New Inventario)
     End Sub
 
-    Private Sub IconButton17_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub IconButton21_Click(sender As Object, e As EventArgs) Handles IconButton21.Click
         OcultarSubMenu()
@@ -196,15 +193,26 @@ Public Class INICIO
     End Sub
 
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
+        If actualhijo IsNot Nothing Then
+            actualhijo.Close()
+        End If
         activosubbtn(sender, Color.FromArgb(178, 255, 102))
         AbrirHijo(New USUARIOS)
     End Sub
 
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
+        If actualhijo IsNot Nothing Then
+            actualhijo.Close()
+        End If
         activosubbtn(sender, Color.FromArgb(178, 255, 102))
+        AbrirHijo(New LUsuarios)
     End Sub
     'Nuevo Proveedor
     Private Sub IconButton8_Click(sender As Object, e As EventArgs) Handles IconButton8.Click
+
+        If actualhijo IsNot Nothing Then
+            actualhijo.Close()
+        End If
         activosubbtn(sender, Color.FromArgb(255, 153, 153))
         AbrirHijo(New Proveedores)
     End Sub
@@ -214,11 +222,17 @@ Public Class INICIO
     End Sub
     'Nueva entrada
     Private Sub IconButton12_Click(sender As Object, e As EventArgs) Handles IconButton12.Click
+        If actualhijo IsNot Nothing Then
+            actualhijo.Close()
+        End If
         activosubbtn(sender, Color.FromArgb(102, 178, 255))
         NEntrada.Show()
     End Sub
 
     Private Sub IconButton11_Click(sender As Object, e As EventArgs) Handles IconButton11.Click
+        If actualhijo IsNot Nothing Then
+            actualhijo.Close()
+        End If
         activosubbtn(sender, Color.FromArgb(102, 178, 255))
         NSalida.Show()
     End Sub

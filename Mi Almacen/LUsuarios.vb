@@ -4,6 +4,7 @@ Public Class LUsuarios
 
     Private Sub LUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarUsuarios("")
+        userlb.SelectedIndex = 0
     End Sub
 
     Public Sub MostrarUsuarios(ByVal filtro As String)
@@ -71,9 +72,13 @@ Public Class LUsuarios
                 imguspb.Image = ByteAImagen(ds.Tables("USUARIOS").Rows(0)("FOTO"))
 
             Catch ex As Exception
-                MsgBox(ex.Message)
+                'MsgBox(ex.Message)
             End Try
 
         End If
+    End Sub
+
+    Private Sub filtxt_TextChanged(sender As Object, e As EventArgs) Handles filtxt.TextChanged
+        MostrarUsuarios(filtxt.Text)
     End Sub
 End Class

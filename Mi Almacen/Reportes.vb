@@ -4,11 +4,12 @@ Imports System.IO
 Imports System.Data.SqlClient
 
 Module Reportes
-    Dim pdfdoc As New Document(itextsharp.text.PageSize.A4, 15.0F, 15.0F, 30.0F, 30.0F)
+
     Dim pdfWrite As PdfWriter
     Sub pdfInventario(ByVal sfdr As SaveFileDialog)
         sfdr.ShowDialog()
         Dim ruta As String = sfdr.FileName
+        Dim pdfdoc As New Document(itextsharp.text.PageSize.A4, 15.0F, 15.0F, 30.0F, 30.0F)
         pdfWrite = PdfWriter.GetInstance(pdfdoc, New FileStream(ruta, FileMode.Create))
 
         Dim FontB As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, itextsharp.text.Font.NORMAL))
@@ -272,6 +273,7 @@ Module Reportes
     Sub pdfEntrada(ByVal sfdr As SaveFileDialog, ByVal qr As Byte())
         sfdr.ShowDialog()
         Dim ruta As String = sfdr.FileName
+        Dim pdfdoc As New Document(itextsharp.text.PageSize.A4, 15.0F, 15.0F, 30.0F, 30.0F)
         pdfWrite = PdfWriter.GetInstance(pdfdoc, New FileStream(ruta, FileMode.Create))
 
         Dim FontB As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, itextsharp.text.Font.NORMAL))
@@ -575,6 +577,7 @@ Module Reportes
     Sub pdfSalida(ByVal sfdr As SaveFileDialog, ByVal qr As Byte())
         sfdr.ShowDialog()
         Dim ruta As String = sfdr.FileName
+        Dim pdfdoc As New Document(itextsharp.text.PageSize.A4, 15.0F, 15.0F, 30.0F, 30.0F)
         pdfWrite = PdfWriter.GetInstance(pdfdoc, New FileStream(ruta, FileMode.Create))
 
         Dim FontB As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, itextsharp.text.Font.NORMAL))
@@ -771,7 +774,7 @@ Module Reportes
         pdfcell.BackgroundColor = BaseColor.LIGHT_GRAY
         tablaD.AddCell(pdfcell)
 
-        Dim dt As DataTable = getDataTableEntrada()
+        Dim dt As DataTable = getDataTableSalida()
 
         For i = 0 To dt.Rows.Count - 1
             For j = 0 To dt.Columns.Count - 1
@@ -847,13 +850,13 @@ Module Reportes
 
     Private Function getDataTableSalida()
         Dim dtable As New DataTable("dt")
-        Dim sqlvac As String = "SELECT DETALLE_ENTRADA.ID_PRODUCTO,PRODUCTOS.NOM_PRODUCTO, PRODUCTOS.MARCA_PRODUCTO, PRODUCTOS.MODELO_PRODUCTO, PRODUCTOS.PU_PRODUCTO,DETALLE_ENTRADA.CANTIDAD,DETALLE_ENTRADA.TOTAL FROM DETALLE_ENTRADA
-        INNER Join PRODUCTOS ON DETALLE_ENTRADA.ID_PRODUCTO=PRODUCTOS.ID_PRODUCTO WHERE DETALLE_ENTRADA.ID_ENTRADA='" + Entrada.identxt.Text + "'"
+        Dim sqlvac As String = "SELECT DETALLE_SALIDA.ID_PRODUCTO,PRODUCTOS.NOM_PRODUCTO, PRODUCTOS.MARCA_PRODUCTO, PRODUCTOS.MODELO_PRODUCTO, PRODUCTOS.PU_PRODUCTO,DETALLE_SALIDA.CANTIDAD,DETALLE_SALIDA.TOTAL FROM DETALLE_SALIDA
+        INNER JOIN PRODUCTOS ON DETALLE_SALIDA.ID_PRODUCTO=PRODUCTOS.ID_PRODUCTO WHERE DETALLE_SALIDA.ID_SALIDA='" + Salida.idsaltxt.Text + "'"
 
         Dim cmd5 As New SqlCommand(sqlvac, con)
 
         Dim CantReg As Integer
-        Dim sql2 As String = "SELECT COUNT(*) FROM DETALLE_ENTRADA WHERE DETALLE_ENTRADA.ID_ENTRADA='" + Entrada.identxt.Text + "'"
+        Dim sql2 As String = "SELECT COUNT(*) FROM DETALLE_SALIDA WHERE DETALLE_SALIDA.ID_SALIDA='" + Salida.idsaltxt.Text + "'"
         Dim cmd As New SqlCommand(sql2, con)
         Dim rs As SqlDataReader
 
@@ -873,7 +876,6 @@ Module Reportes
 
         Return dtable
     End Function
-
 
 
 End Module
