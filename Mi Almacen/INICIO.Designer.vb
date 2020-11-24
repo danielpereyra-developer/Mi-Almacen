@@ -29,11 +29,6 @@ Partial Class INICIO
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.asidep = New System.Windows.Forms.Panel()
         Me.IconButton21 = New FontAwesome.Sharp.IconButton()
-        Me.sub5 = New System.Windows.Forms.Panel()
-        Me.IconButton18 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton19 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton20 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton17 = New FontAwesome.Sharp.IconButton()
         Me.IconButton13 = New FontAwesome.Sharp.IconButton()
         Me.sub3 = New System.Windows.Forms.Panel()
         Me.IconButton4 = New FontAwesome.Sharp.IconButton()
@@ -67,7 +62,6 @@ Partial Class INICIO
         Me.footerp.SuspendLayout()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.asidep.SuspendLayout()
-        Me.sub5.SuspendLayout()
         Me.sub3.SuspendLayout()
         Me.sub2.SuspendLayout()
         Me.sub1.SuspendLayout()
@@ -132,8 +126,6 @@ Partial Class INICIO
         '
         Me.asidep.AutoScroll = True
         Me.asidep.Controls.Add(Me.IconButton21)
-        Me.asidep.Controls.Add(Me.sub5)
-        Me.asidep.Controls.Add(Me.IconButton17)
         Me.asidep.Controls.Add(Me.IconButton13)
         Me.asidep.Controls.Add(Me.sub3)
         Me.asidep.Controls.Add(Me.IconButton9)
@@ -158,7 +150,7 @@ Partial Class INICIO
         Me.IconButton21.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton21.IconSize = 30
         Me.IconButton21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton21.Location = New System.Drawing.Point(0, 633)
+        Me.IconButton21.Location = New System.Drawing.Point(0, 474)
         Me.IconButton21.Name = "IconButton21"
         Me.IconButton21.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.IconButton21.Size = New System.Drawing.Size(233, 40)
@@ -167,81 +159,6 @@ Partial Class INICIO
         Me.IconButton21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.IconButton21.UseVisualStyleBackColor = True
-        '
-        'sub5
-        '
-        Me.sub5.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.sub5.Controls.Add(Me.IconButton18)
-        Me.sub5.Controls.Add(Me.IconButton19)
-        Me.sub5.Controls.Add(Me.IconButton20)
-        Me.sub5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.sub5.Location = New System.Drawing.Point(0, 514)
-        Me.sub5.Name = "sub5"
-        Me.sub5.Size = New System.Drawing.Size(233, 119)
-        Me.sub5.TabIndex = 10
-        '
-        'IconButton18
-        '
-        Me.IconButton18.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton18.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButton18.IconColor = System.Drawing.Color.Black
-        Me.IconButton18.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton18.Location = New System.Drawing.Point(0, 70)
-        Me.IconButton18.Name = "IconButton18"
-        Me.IconButton18.Size = New System.Drawing.Size(233, 35)
-        Me.IconButton18.TabIndex = 2
-        Me.IconButton18.Text = "IconButton18"
-        Me.IconButton18.UseVisualStyleBackColor = True
-        '
-        'IconButton19
-        '
-        Me.IconButton19.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton19.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButton19.IconColor = System.Drawing.Color.Black
-        Me.IconButton19.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton19.Location = New System.Drawing.Point(0, 35)
-        Me.IconButton19.Name = "IconButton19"
-        Me.IconButton19.Size = New System.Drawing.Size(233, 35)
-        Me.IconButton19.TabIndex = 1
-        Me.IconButton19.Text = "IconButton19"
-        Me.IconButton19.UseVisualStyleBackColor = True
-        '
-        'IconButton20
-        '
-        Me.IconButton20.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton20.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButton20.IconColor = System.Drawing.Color.Black
-        Me.IconButton20.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton20.Location = New System.Drawing.Point(0, 0)
-        Me.IconButton20.Name = "IconButton20"
-        Me.IconButton20.Size = New System.Drawing.Size(233, 35)
-        Me.IconButton20.TabIndex = 0
-        Me.IconButton20.Text = "IconButton20"
-        Me.IconButton20.UseVisualStyleBackColor = True
-        '
-        'IconButton17
-        '
-        Me.IconButton17.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton17.FlatAppearance.BorderSize = 0
-        Me.IconButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton17.ForeColor = System.Drawing.Color.White
-        Me.IconButton17.IconChar = FontAwesome.Sharp.IconChar.Cogs
-        Me.IconButton17.IconColor = System.Drawing.Color.White
-        Me.IconButton17.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton17.IconSize = 30
-        Me.IconButton17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton17.Location = New System.Drawing.Point(0, 474)
-        Me.IconButton17.Name = "IconButton17"
-        Me.IconButton17.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.IconButton17.Size = New System.Drawing.Size(233, 40)
-        Me.IconButton17.TabIndex = 9
-        Me.IconButton17.Text = "CONFIGURACION"
-        Me.IconButton17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton17.UseVisualStyleBackColor = True
         '
         'IconButton13
         '
@@ -722,7 +639,6 @@ Partial Class INICIO
         Me.footerp.PerformLayout()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.asidep.ResumeLayout(False)
-        Me.sub5.ResumeLayout(False)
         Me.sub3.ResumeLayout(False)
         Me.sub2.ResumeLayout(False)
         Me.sub1.ResumeLayout(False)
@@ -756,11 +672,6 @@ Partial Class INICIO
     Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton13 As FontAwesome.Sharp.IconButton
-    Friend WithEvents sub5 As Panel
-    Friend WithEvents IconButton18 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton19 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton20 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton17 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton21 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton4 As FontAwesome.Sharp.IconButton
     Friend WithEvents menup As Panel

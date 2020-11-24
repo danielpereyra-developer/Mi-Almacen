@@ -123,7 +123,7 @@ Public Class INICIO
         sub1.Visible = False
         sub2.Visible = False
         sub3.Visible = False
-        sub5.Visible = False
+
     End Sub
     Private Sub MostrarSubMenu(submenu As Panel)
         If submenu.Visible = False Then
@@ -172,9 +172,8 @@ Public Class INICIO
         AbrirHijo(New Inventario)
     End Sub
 
-    Private Sub IconButton17_Click(sender As Object, e As EventArgs) Handles IconButton17.Click
-        MostrarSubMenu(sub5)
-        activobtn(sender, Color.FromArgb(255, 102, 255))
+    Private Sub IconButton17_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub IconButton21_Click(sender As Object, e As EventArgs) Handles IconButton21.Click

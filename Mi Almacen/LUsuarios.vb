@@ -12,11 +12,11 @@ Public Class LUsuarios
         Dim sql As String
         Dim sql2 As String
         If filtro = "" Then
-            sql = "SELECT * FROM PRODUCTOS"
-            sql2 = "SELECT COUNT(*) FROM PRODUCTOS"
+            sql = "SELECT * FROM USUARIOS"
+            sql2 = "SELECT COUNT(*) FROM USUARIOS"
         Else
-            sql = "SELECT * FROM PRODUCTOS WHERE PRODUCTOS.NOM_PRODUCTO LIKE '" + filtro + "%'"
-            sql2 = "SELECT COUNT(*) FROM PRODUCTOS WHERE PRODUCTOS.NOM_PRODUCTO LIKE '" + filtro + "%'"
+            sql = "SELECT * FROM PRODUCTOS WHERE USUARIOS.NOMBRE LIKE '" + filtro + "%'"
+            sql2 = "SELECT COUNT(*) FROM PRODUCTOS WHERE USUARIOS.NOMBRE LIKE '" + filtro + "%'"
         End If
 
         Dim cmd As New SqlCommand(sql, con)
@@ -60,15 +60,15 @@ Public Class LUsuarios
                 Dim ds As New DataSet
                 da.Fill(ds, "USUARIOS")
 
-                cargtxt.Text = ds.Tables("USUARIOS").Rows(0)("ID_PRODUCTO").ToString()
-                nomtxt.Text = ds.Tables("USUARIOS").Rows(0)("NOM_PRODUCTO").ToString()
-                apetxt.Text = ds.Tables("USUARIOS").Rows(0)("MARCA_PRODUCTO").ToString()
-                teltxt.Text = ds.Tables("USUARIOS").Rows(0)("MODELO_PRODUCTO").ToString()
+                cargtxt.Text = ds.Tables("USUARIOS").Rows(0)("CARGO").ToString()
+                nomtxt.Text = ds.Tables("USUARIOS").Rows(0)("PNOM_USUARIO").ToString()
+                apetxt.Text = ds.Tables("USUARIOS").Rows(0)("APELLIDOS_US").ToString()
+                teltxt.Text = ds.Tables("USUARIOS").Rows(0)("TELEFONO").ToString()
 
-                dnitxt.Text = ds.Tables("USUARIOS").Rows(0)("EX_PRODUCTO").ToString()
-                edadtxt.Text = ds.Tables("USUARIOS").Rows(0)("PU_PRODUCTO").ToString()
-                ustxt.Text = ds.Tables("USUARIOS").Rows(0)("PU_PRODUCTO").ToString()
-                imguspb.Image = ByteAImagen(ds.Tables("USUARIOS").Rows(0)("IMAGEN_PRODUCTO"))
+                dnitxt.Text = ds.Tables("USUARIOS").Rows(0)("DNI_USUARIO").ToString()
+                edadtxt.Text = ds.Tables("USUARIOS").Rows(0)("EDAD").ToString()
+                ustxt.Text = ds.Tables("USUARIOS").Rows(0)("NOMBRE").ToString()
+                imguspb.Image = ByteAImagen(ds.Tables("USUARIOS").Rows(0)("FOTO"))
 
             Catch ex As Exception
                 MsgBox(ex.Message)

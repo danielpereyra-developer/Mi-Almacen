@@ -219,5 +219,17 @@ Public Class Inventario
 
     End Sub
 
+    Private Sub nomptxt_GotFocus(sender As Object, e As EventArgs) Handles nomptxt.GotFocus
+        If nomptxt.Text = "Buscar por nombre de producto" Then
+            nomptxt.ForeColor = Color.Black
+            nomptxt.Text = ""
+        End If
+    End Sub
 
+    Private Sub nomptxt_LostFocus(sender As Object, e As EventArgs) Handles nomptxt.LostFocus
+        If nomptxt.Text = Nothing Then
+            nomptxt.ForeColor = Color.Gray
+            nomptxt.Text = "Buscar por nombre de producto"
+        End If
+    End Sub
 End Class

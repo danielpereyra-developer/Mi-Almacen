@@ -123,7 +123,7 @@ Public Class Proveedores
 
     Private Sub regbtn_Click(sender As Object, e As EventArgs) Handles regbtn.Click
         If nomptxt.Text <> "" And rucptxt.Text <> "" And dirptxt.Text <> "" And telptxt.Text <> "" And peptxt.Text <> "" And telpeptxt.Text <> "" And imgpb.Image IsNot Nothing Then
-            Dim idprov As String
+            Dim idprov As String = ""
             Dim cantp As Integer
             Dim sql2 As String = "SELECT COUNT(*) FROM PROVEEDOR"
             Dim cmd As New SqlCommand(sql2, con)
@@ -148,7 +148,7 @@ Public Class Proveedores
             Try
                 con.Open()
                 cmd2.ExecuteNonQuery()
-                'MsgBox("Registro Guardado Exitosamente")
+                MsgBox("Registro Guardado Exitosamente")
 
             Catch ex As Exception
                 MsgBox(ex.Message)

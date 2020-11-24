@@ -125,7 +125,7 @@ Public Class USUARIOS
             End If
 
             nomustxt.Text = pnomtxt.Text & Mid(apetxt.Text, 1, 1) & Mid(dnitxt.Text, 7, 2) & edadtxt.Text
-            MsgBox(idus)
+
         Else
             MsgBox("LLene todos los datos anteriores")
         End If

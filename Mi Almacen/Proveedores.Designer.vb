@@ -87,6 +87,7 @@ Partial Class Proveedores
         'imgpb
         '
         Me.imgpb.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.imgpb.Image = Global.Mi_Almacen.My.Resources.Resources.usuario__2_
         Me.imgpb.Location = New System.Drawing.Point(98, 120)
         Me.imgpb.Name = "imgpb"
         Me.imgpb.Size = New System.Drawing.Size(287, 297)
