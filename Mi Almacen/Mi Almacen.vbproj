@@ -289,6 +289,7 @@
     <Content Include="Imagenes\009-employee.png" />
     <Content Include="Imagenes\027-distribution.png" />
     <Content Include="Imagenes\candado-cerrado.png" />
+    <Content Include="Imagenes\paquete.png" />
     <Content Include="Imagenes\usuario %282%29.png" />
     <Content Include="Imagenes\usuario-de-perfil.png" />
     <Content Include="Imagenes\usuario.png" />
