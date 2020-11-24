@@ -29,8 +29,14 @@ Public Class INICIO
         OcultarSubMenu()
         If Login.tpus = "JA" Then
             tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\006-deliveryman.png")
+            IconButton1.Visible = False
+            sub1.Visible = False
         ElseIf Login.tpus = "TB" Then
             tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\004-worker.png")
+            IconButton1.Visible = False
+            sub1.Visible = False
+            IconButton5.Visible = False
+            sub2.Visible = False
         ElseIf Login.tpus = "AD" Then
             tpusuariopb.Image = Image.FromFile("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\009-employee.png")
         End If
@@ -217,7 +223,7 @@ Public Class INICIO
         AbrirHijo(New Proveedores)
     End Sub
 
-    Private Sub IconButton7_Click(sender As Object, e As EventArgs) Handles IconButton7.Click
+    Private Sub IconButton7_Click(sender As Object, e As EventArgs)
         activosubbtn(sender, Color.FromArgb(255, 153, 153))
     End Sub
     'Nueva entrada
