@@ -42,6 +42,7 @@ Partial Class LUsuarios
         Me.cargtxt = New System.Windows.Forms.TextBox()
         Me.filtxt = New System.Windows.Forms.TextBox()
         Me.exppdfbtn = New FontAwesome.Sharp.IconButton()
+        Me.sfd = New System.Windows.Forms.SaveFileDialog()
         Me.Panel1.SuspendLayout()
         CType(Me.imguspb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -233,6 +234,10 @@ Partial Class LUsuarios
         Me.exppdfbtn.Text = "IMPRIMIR USUARIOS PDF"
         Me.exppdfbtn.UseVisualStyleBackColor = True
         '
+        'sfd
+        '
+        Me.sfd.Filter = "PDF|*.pdf"
+        '
         'LUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -287,4 +292,5 @@ Partial Class LUsuarios
     Friend WithEvents cargtxt As TextBox
     Friend WithEvents filtxt As TextBox
     Friend WithEvents exppdfbtn As FontAwesome.Sharp.IconButton
+    Friend WithEvents sfd As SaveFileDialog
 End Class

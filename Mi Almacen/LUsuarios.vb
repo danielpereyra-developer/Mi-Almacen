@@ -81,4 +81,8 @@ Public Class LUsuarios
     Private Sub filtxt_TextChanged(sender As Object, e As EventArgs) Handles filtxt.TextChanged
         MostrarUsuarios(filtxt.Text)
     End Sub
+
+    Private Sub exppdfbtn_Click(sender As Object, e As EventArgs) Handles exppdfbtn.Click
+        pdfUsuarios(sfd)
+    End Sub
 End Class

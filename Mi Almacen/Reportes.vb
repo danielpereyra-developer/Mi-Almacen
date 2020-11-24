@@ -878,4 +878,231 @@ Module Reportes
     End Function
 
 
+    Sub pdfUsuarios(ByVal sfdr As SaveFileDialog)
+        sfdr.ShowDialog()
+        Dim ruta As String = sfdr.FileName
+        Dim pdfdoc As New Document(itextsharp.text.PageSize.A4, 15.0F, 15.0F, 30.0F, 30.0F)
+        pdfWrite = PdfWriter.GetInstance(pdfdoc, New FileStream(ruta, FileMode.Create))
+
+        Dim FontB As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, itextsharp.text.Font.NORMAL))
+        Dim FontB8 As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, itextsharp.text.Font.BOLD))
+        Dim FontB12 As New Font(FontFactory.GetFont(FontFactory.HELVETICA, 12, itextsharp.text.Font.BOLD))
+        Dim pcolum As New Font(itextsharp.text.Font.FontFamily.HELVETICA, 9, itextsharp.text.Font.BOLD, BaseColor.BLACK)
+        Dim pfila As New Font(itextsharp.text.Font.FontFamily.HELVETICA, 9, itextsharp.text.Font.BOLD, BaseColor.BLACK)
+        Dim Cvacio As PdfPCell = New PdfPCell(New Phrase("  "))
+        Cvacio.Border = 0
+
+        pdfdoc.Open()
+
+        Dim tabla1 As PdfPTable = New PdfPTable(4)
+        Dim col1 As New PdfPCell
+        Dim col2 As New PdfPCell
+        Dim col3 As New PdfPCell
+        Dim col4 As New PdfPCell
+        Dim col5 As New PdfPCell
+        Dim col6 As New PdfPCell
+        Dim col7 As New PdfPCell
+        'Dim ILine As Integer
+        'Dim IFila As Integer
+
+        tabla1.WidthPercentage = 95
+
+        Dim whidths As Single() = New Single() {4.0F, 7.0F, 1.0F, 4.0F}
+        tabla1.SetWidths(whidths)
+
+#Region "Encabezado"
+
+        Dim imgurl As String = Application.StartupPath & "\Imagenes\Logo_header_desktop.png"
+        Dim img As itextsharp.text.Image
+        img = itextsharp.text.Image.GetInstance(imgurl)
+        img.ScaleToFit(110.0F, 140.0F)
+        img.SpacingBefore = 20.0F
+        img.SpacingAfter = 10.0F
+        img.SetAbsolutePosition(35, 780)
+        pdfdoc.Add(img)
+
+        tabla1.AddCell(Cvacio)
+        col2 = New PdfPCell(New Phrase("SODIMAC S.A.", FontB8))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+        col2 = New PdfPCell(New Phrase("Av. José De Lama S/N Cruce con Av. Las Dalias, Sullana 20103", FontB))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+        col2 = New PdfPCell(New Phrase("SULLANA", FontB))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+        col2 = New PdfPCell(New Phrase("(01) 2030420", FontB))
+        col2.Border = 0
+        tabla1.AddCell(col2)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+        tabla1.AddCell(Cvacio)
+
+
+        Dim img2 As itextsharp.text.Image
+        img2 = itextsharp.text.Image.GetInstance("C:\Users\Usuario\source\repos\Mi Almacen\Mi Almacen\Imagenes\perfil.png")
+        img2.ScaleToFit(60.0F, 90.0F)
+        img2.SpacingBefore = 20.0F
+        img2.SpacingAfter = 10.0F
+        img2.SetAbsolutePosition(460, 750)
+        pdfdoc.Add(img2)
+
+
+        pdfdoc.Add(tabla1)
+
+#End Region
+
+#Region "DATOS"
+
+        Dim CLinea As PdfPCell = New PdfPCell(New Phrase("  "))
+        CLinea.Colspan = 4
+        CLinea.Border = 2
+
+        Dim tabla2 As PdfPTable = New PdfPTable(4)
+        Dim whidths2 As Single() = New Single() {2.0F, 8.0F, 3.0F, 2.0F}
+        tabla2.WidthPercentage = 95
+        tabla2.SetWidths(whidths2)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(CLinea)
+        col1 = New PdfPCell(New Phrase("Usuario: ", FontB8))
+        col1.Border = 0
+        tabla2.AddCell(col1)
+        col2 = New PdfPCell(New Phrase(Login.user, FontB8))
+        col2.Border = 0
+        tabla2.AddCell(col2)
+        col3 = New PdfPCell(New Phrase("Fecha de Reporte: ", FontB8))
+        col3.Border = 0
+        tabla2.AddCell(col3)
+        col4 = New PdfPCell(New Phrase(Now, FontB8))
+        col4.Border = 0
+        tabla2.AddCell(col4)
+
+        tabla2.AddCell(CLinea)
+
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+        tabla2.AddCell(Cvacio)
+
+        pdfdoc.Add(tabla2)
+
+#End Region
+
+#Region "Detalle"
+        Dim tablaD As New PdfPTable(4)
+        tablaD.TotalWidth = 550.0F
+        tablaD.LockedWidth = True
+        tablaD.HorizontalAlignment = Element.ALIGN_CENTER
+        tablaD.HeaderRows = 1
+
+        Dim widths3 As Single() = New Single() {4.0F, 7.0F, 1.0F, 4.0F}
+        tablaD.SetWidths(widths3)
+
+        Dim pdfcell As PdfPCell = Nothing
+
+        Dim dt As DataTable = getDataTableSalida()
+
+        For i = 0 To dt.Rows.Count - 1
+            Dim imgus As itextsharp.text.Image
+            imgus = itextsharp.text.Image.GetInstance(dt.Rows(i)(5))
+            imgus.ScaleToFit(50.0F, 50.0F)
+            imgus.SpacingBefore = 20.0F
+            imgus.SpacingAfter = 10.0F
+            imgus.SetAbsolutePosition(50, 400 - (45 * i))
+            pdfdoc.Add(imgus)
+
+            tablaD.AddCell(Cvacio)
+            col2 = New PdfPCell(New Phrase("Nombre de Usuario: " + dt.Rows(i)(0).ToString, FontB8))
+            col2.Border = 0
+            tabla1.AddCell(col2)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+
+            col2 = New PdfPCell(New Phrase("Cargo: " + dt.Rows(i)(1).ToString, FontB))
+            col2.Border = 0
+            tabla1.AddCell(col2)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+
+            col2 = New PdfPCell(New Phrase(dt.Rows(i)(2).ToString, FontB))
+            col2.Border = 0
+            tabla1.AddCell(col2)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+
+            col2 = New PdfPCell(New Phrase(dt.Rows(i)(3).ToString, FontB))
+            col2.Border = 0
+            tabla1.AddCell(col2)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+
+            col2 = New PdfPCell(New Phrase("Telefono: " + dt.Rows(i)(4).ToString, FontB))
+            col2.Border = 0
+            tabla1.AddCell(col2)
+            tabla1.AddCell(Cvacio)
+            tabla1.AddCell(Cvacio)
+
+        Next
+
+        pdfdoc.Add(tablaD)
+
+#End Region
+
+
+        pdfdoc.Close()
+
+        Process.Start(ruta)
+
+    End Sub
+
+    Private Function getDataTableUser()
+        Dim dtable As New DataTable("dt")
+        Dim sqlvac As String = "SELECT NOMBRE,CARGO,PNOM_USUARIO,APELLIDOS_US,TELEFONO,FOTO FROM USUARIOS"
+
+        Dim cmd5 As New SqlCommand(sqlvac, con)
+
+        Dim CantReg As Integer
+        Dim sql2 As String = "SELECT COUNT(*) FROM USUARIOS"
+        Dim cmd As New SqlCommand(sql2, con)
+        Dim rs As SqlDataReader
+
+        con.Open()
+        rs = cmd.ExecuteReader
+        rs.Read()
+        CantReg = CInt(rs(0))
+        con.Close()
+
+        Try
+            Dim da As New SqlDataAdapter(cmd5)
+
+            da.Fill(dtable)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Return dtable
+    End Function
+
+
 End Module
