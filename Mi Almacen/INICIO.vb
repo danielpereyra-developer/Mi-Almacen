@@ -237,11 +237,11 @@ Public Class INICIO
         NSalida.Show()
     End Sub
 
-    Private Sub IconButton10_Click(sender As Object, e As EventArgs) Handles IconButton10.Click
+    Private Sub IconButton10_Click(sender As Object, e As EventArgs) 
         activosubbtn(sender, Color.FromArgb(102, 178, 255))
     End Sub
 
-    Private Sub IconButton4_Click(sender As Object, e As EventArgs) Handles IconButton4.Click
+    Private Sub IconButton4_Click(sender As Object, e As EventArgs) 
         activosubbtn(sender, Color.FromArgb(102, 178, 255))
     End Sub
 
