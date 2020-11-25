@@ -230,6 +230,7 @@ Partial Class Producto
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(384, 58)
         Me.Label1.Name = "Label1"
@@ -239,6 +240,7 @@ Partial Class Producto
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(384, 115)
         Me.Label2.Name = "Label2"
@@ -248,6 +250,7 @@ Partial Class Producto
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(384, 167)
         Me.Label3.Name = "Label3"
@@ -257,6 +260,7 @@ Partial Class Producto
         '
         'Label4
         '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(571, 167)
         Me.Label4.Name = "Label4"
@@ -266,6 +270,7 @@ Partial Class Producto
         '
         'Label5
         '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(384, 226)
         Me.Label5.Name = "Label5"
@@ -275,6 +280,7 @@ Partial Class Producto
         '
         'Label6
         '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(573, 226)
         Me.Label6.Name = "Label6"
@@ -284,6 +290,7 @@ Partial Class Producto
         '
         'Label7
         '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(384, 288)
         Me.Label7.Name = "Label7"
@@ -293,6 +300,7 @@ Partial Class Producto
         '
         'Label8
         '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(384, 352)
         Me.Label8.Name = "Label8"
@@ -302,6 +310,7 @@ Partial Class Producto
         '
         'Label9
         '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(573, 352)
         Me.Label9.Name = "Label9"
@@ -311,6 +320,7 @@ Partial Class Producto
         '
         'Label10
         '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(384, 406)
         Me.Label10.Name = "Label10"

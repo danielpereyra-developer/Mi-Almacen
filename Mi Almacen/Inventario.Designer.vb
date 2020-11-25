@@ -323,6 +323,7 @@ Partial Class Inventario
         '
         'addbtn
         '
+        Me.addbtn.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.addbtn.BackColor = System.Drawing.Color.YellowGreen
         Me.addbtn.FlatAppearance.BorderSize = 0
         Me.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -341,6 +342,7 @@ Partial Class Inventario
         '
         'editbtn
         '
+        Me.editbtn.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.editbtn.BackColor = System.Drawing.Color.DodgerBlue
         Me.editbtn.FlatAppearance.BorderSize = 0
         Me.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -359,6 +361,7 @@ Partial Class Inventario
         '
         'delbtn
         '
+        Me.delbtn.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.delbtn.BackColor = System.Drawing.Color.Firebrick
         Me.delbtn.FlatAppearance.BorderSize = 0
         Me.delbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
